@@ -3,7 +3,7 @@ function toggleWin(id) {
     const win = document.getElementById(id);
 
     if(win.classList.contains('open')) {
-        win.classList.contains('open');
+        win.classList.remove('open');
         return
     }
 
@@ -11,8 +11,8 @@ function toggleWin(id) {
 
     //reset da posiçao pro centro
     win.style.top = '50%';
-    win.style.top = '50%';
-    win.style.transform = 'translate(-50%, -50%';
+    win.style.left = '50%';
+    win.style.transform = 'translate(-50%, -50%)';
 
     bringToFront(win);
 }
@@ -23,22 +23,28 @@ function closeWin(id) {
     document.getElementById(id).classList.remove('open');
 }
 
+
+//traz janela pra frente ao clicar 
 let zCounter = 10;
 function bringToFront(win) {
     win.style.zIndex = ++zCounter
 }
 
+// drag pelo header
+
 document.querySelectorAll('main > section').forEach(win => {
     const header = win.querySelector('header');
 
-    header.addEventListener('mousedown', function (e)) {
+    header.addEventListener('mousedown', function (e) {
         bringToFront(win);
 
 
-
-        const startX = e.clientX win.offsetLeft;
+        // distancia do mouse ao canto da janela
+        const startX = e.clientX - win.offsetLeft;
         const startY = e.clientY - win.offsetTop;
 
+        // antes de arrastar, tira o transform do centro 
+        // pocisiona c/ left/top fixo
         win.style.transform = 'none';
         win.style.left = win.offsetLeft + 'px';
         win.style.top = win.offsetTop + 'px';
@@ -57,8 +63,11 @@ document.querySelectorAll('main > section').forEach(win => {
         document.addEventListener('mouseup', onMouseUp);
     })
 
+    // traz p frente ao clicar em qualquer parte da janela
     win.addEventListener('mousedown', () => bringToFront(win));
 });
+
+//relogio
 
 function updateClock(){
     const now = new Date();
