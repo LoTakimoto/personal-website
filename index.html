@@ -3,6 +3,7 @@
     
 <head>
     <title>Loren's workspace</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -14,30 +15,30 @@
         <!--  ÍCONES  -->
         <aside>
             
-            <button> 
+            <button onclick="toggleWin('win-about')">
                 About me
             </button>
 
-            <button>
+            <button onclick="toggleWin('win-projects')">
                 Projects
             </button>
 
-            <button>
+            <button onclick="toggleWin('win-socials')">
                 Socials
             </button>
 
-            <button>
+            <button onclick="toggleWin('win-journey')">
                 Journey
             </button>
 
-            <button>
-                Yippiee
+            <button onclick="toggleWin('win-music')">
+                Music yippie
             </button>
 
         </aside>
 
-        <!--  JANELA: SOBRE MIM :)  -->
-        <section>
+        <!--  SOBRE MIM :)  -->
+        <section id="win-about">
 
             <header>
                 <h2>About me</h2>
@@ -56,8 +57,8 @@
 
         </section>
 
-        <!--  JANELA: SOCIALS  -->
-          <section>
+        <!-- SOCIALS  -->
+          <section id="win-socials">
 
             <header>
                 <h2>Socials & Contact</h2>
@@ -88,9 +89,9 @@
 
           </section>
 
-          <!--  JANELA: PROJETOS!!  -->
+          <!-- PROJETOS! -->
 
-          <section>
+          <section id="win-projects">
             
             <header>
                 <h2>Projects</h2>
@@ -116,8 +117,8 @@
 
           </section>
 
-          <!--  JANELA: JORNADA  -->
-        <section>
+          <!-- JORNADA  -->
+        <section id="win-journey">
 
             <header>
                 <h2>My Journey :l</h2>
@@ -149,13 +150,13 @@
 
         </section>
 
-        <!-- MÚSICA? -->
+        <!-- MÚSICA -->
 
-        <section>
+        <section id="win-music">
 
             <header>
                 <h2>Favourite song</h2>
-            </heder>
+            </header>
 
             <article>
 
@@ -183,7 +184,7 @@
             </button>
 
             <!--  RELOGIO  -->
-            <section>
+            <section id="win-clock">
 
                 <h3>Relógio</h3>
 
@@ -193,21 +194,21 @@
 
                 <select id="timezone">
 
-                    <options>
+                    <option>
                         São Paulo
-                    </options>
+                    </option>
 
-                    <options>
+                    <option>
                         Opção 2
-                    </options>
+                    </option>
 
-                    <options>
+                    <option>
                         Opção 3
-                    </options>
+                    </option>
 
-                    <options>
+                    <option>
                         Opção 4
-                    </options>
+                    </option>
 
                 </select>
 
@@ -220,6 +221,8 @@
         </footer>
 
     </main>
+
+    <script src="script.js"></script>
 
 </body>
 
