@@ -28,3 +28,24 @@ function bringToFront(win) {
     win.style.zIndex = ++zCounter
 }
 
+document.querySelectorAll('main > section').forEach(win => {
+    const header = win.querySelector('header');
+
+    header.addEventListener('mousedown', function (e)) {
+        bringToFront(win);
+
+
+
+        const startX = e.clientX win.offsetLeft;
+        const startY = e.clientY - win.offsetTop;
+
+        win.style.transform = 'none';
+        win.style.left = win.offsetLeft + 'px';
+        win.style.top = win.offsetTop + 'px';
+
+        function onMouseMove(e) {
+            win.style.left = ();
+            win.style.top = ();
+        }
+    }
+})
