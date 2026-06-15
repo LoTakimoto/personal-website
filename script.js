@@ -44,8 +44,28 @@ document.querySelectorAll('main > section').forEach(win => {
         win.style.top = win.offsetTop + 'px';
 
         function onMouseMove(e) {
-            win.style.left = ();
-            win.style.top = ();
+            win.style.left = (e.clientX - startX) + 'px';
+            win.style.top = (e.clientY - startY) + 'px';
         }
-    }
-})
+
+        function onMouseUp(){
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+        }
+
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+    })
+
+    win.addEventListener('mousedown', () => bringToFront(win));
+});
+
+function updateClock(){
+    const now = new Date();
+    document.querySelector('#win-clock p').textContent =
+        now.toLoca
+leTimeString('pt-BR', { hour: '2-digit', minute: '2-digit'});
+        
+}
+updateClock();
+setInterval(updateClock, 1000);
