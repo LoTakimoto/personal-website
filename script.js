@@ -48,8 +48,17 @@ document.querySelectorAll('main > section').forEach(win => {
         const startY = e.clientY - rect.top;
 
         function onMouseMove(e) {
-            win.style.left = (e.clientX - startX) + 'px';
-            win.style.top = (e.clientY - startY) + 'px';
+            const maxX = window.innerWidth - win.offsetWidth;
+            const maxY = window.innerHeight - win.offsetHeight;
+
+            let newX = e.clientX - startX;
+            let newY = e.clientY - startY;
+
+            newX = Math.max(0, Math.min(newX, maxX));
+            newY = Math.max(0, Math.min(newY, maxY));
+
+            win.style.left = newX + 'px';
+            win.style.top = newY + 'px';
         }
 
         function onMouseUp(){
