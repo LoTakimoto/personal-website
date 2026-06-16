@@ -38,16 +38,14 @@ document.querySelectorAll('main > section').forEach(win => {
     header.addEventListener('mousedown', function (e) {
         bringToFront(win);
 
-
-        // distancia do mouse ao canto da janela
-        const startX = e.clientX - win.offsetLeft;
-        const startY = e.clientY - win.offsetTop;
-
-        // antes de arrastar, tira o transform do centro 
-        // pocisiona c/ left/top fixo
+        // pega a posiçao real ANTES de mexer em qualquer coisa
+        const rect = win.getBoundingClientRect();
         win.style.transform = 'none';
-        win.style.left = win.offsetLeft + 'px';
-        win.style.top = win.offsetTop + 'px';
+        win.style.left = rect.left + 'px';
+        win.style.top = rect.top + 'px';
+
+        const startX = e.clientX - rect.left;
+        const startY = e.clientY - rect.top;
 
         function onMouseMove(e) {
             win.style.left = (e.clientX - startX) + 'px';
@@ -61,19 +59,19 @@ document.querySelectorAll('main > section').forEach(win => {
 
         document.addEventListener('mousemove', onMouseMove);
         document.addEventListener('mouseup', onMouseUp);
-    })
+    });
 
-    // traz p frente ao clicar em qualquer parte da janela
     win.addEventListener('mousedown', () => bringToFront(win));
 });
+
+
 
 //relogio
 
 function updateClock(){
     const now = new Date();
     document.querySelector('#win-clock p').textContent =
-        now.toLoca
-leTimeString('pt-BR', { hour: '2-digit', minute: '2-digit'});
+        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit'});
         
 }
 updateClock();
