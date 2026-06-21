@@ -10,7 +10,7 @@ body {
     height: 100vh;
     overflow: hidden;
 }
-
+ 
 /* area do desktop */
 main {
     width: 100%;
@@ -152,4 +152,19 @@ footer > button {
 #win-clock select {
     font-size: 12px;
     padding: 2px 4px;
+}
+
+.btn-link {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.btn-link:hover {
+    background: #34495e;
 }

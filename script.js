@@ -2,43 +2,41 @@
 function toggleWin(id) {
     const win = document.getElementById(id);
 
-    if(win.classList.contains('open')) {
+    if (win.classList.contains('open')) {
         win.classList.remove('open');
-        return
+        return;
     }
+
+    const openWindows = document.querySelectorAll('main > section.open').length;
 
     win.classList.add('open');
 
-    //reset da posiçao pro centro
-    win.style.top = '50%';
-    win.style.left = '50%';
+    const offset = openWindows * 30;
+    win.style.top = `calc(50% + ${offset}px)`;
+    win.style.left = `calc(50% + ${offset}px)`;
     win.style.transform = 'translate(-50%, -50%)';
 
     bringToFront(win);
 }
-
 
 // Fechar pelo botao 'X'
 function closeWin(id) {
     document.getElementById(id).classList.remove('open');
 }
 
-
-//traz janela pra frente ao clicar 
+// traz janela pra frente ao clicar
 let zCounter = 10;
 function bringToFront(win) {
-    win.style.zIndex = ++zCounter
+    win.style.zIndex = ++zCounter;
 }
 
 // drag pelo header
-
 document.querySelectorAll('main > section').forEach(win => {
     const header = win.querySelector('header');
 
     header.addEventListener('mousedown', function (e) {
         bringToFront(win);
 
-        // pega a posiçao real ANTES de mexer em qualquer coisa
         const rect = win.getBoundingClientRect();
         win.style.transform = 'none';
         win.style.left = rect.left + 'px';
@@ -61,7 +59,7 @@ document.querySelectorAll('main > section').forEach(win => {
             win.style.top = newY + 'px';
         }
 
-        function onMouseUp(){
+        function onMouseUp() {
             document.removeEventListener('mousemove', onMouseMove);
             document.removeEventListener('mouseup', onMouseUp);
         }
@@ -73,15 +71,11 @@ document.querySelectorAll('main > section').forEach(win => {
     win.addEventListener('mousedown', () => bringToFront(win));
 });
 
-
-
-//relogio
-
-function updateClock(){
+// relogio
+function updateClock() {
     const now = new Date();
     document.querySelector('#win-clock p').textContent =
-        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit'});
-        
+        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
 }
 updateClock();
 setInterval(updateClock, 1000);
