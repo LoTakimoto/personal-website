@@ -11,9 +11,9 @@ function toggleWin(id) {
 
     win.classList.add('open');
 
-    const offset = openWindows * 30;
-    win.style.top = `calc(50% + ${offset}px)`;
-    win.style.left = `calc(50% + ${offset}px)`;
+    const offset = openWindows * 35;
+    win.style.top = `calc(37% + ${offset}px)`;
+    win.style.left = `calc(48% + ${offset}px)`;
     win.style.transform = 'translate(-50%, -50%)';
 
     bringToFront(win);
@@ -80,4 +80,4 @@ function updateClock() {
 updateClock();
 setInterval(updateClock, 1000);
 
-//this is a test
+
