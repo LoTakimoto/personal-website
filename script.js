@@ -1,4 +1,6 @@
 // abrir e fechar janela
+let cascadeStep = 0;
+
 function toggleWin(id) {
     const win = document.getElementById(id);
 
@@ -7,11 +9,11 @@ function toggleWin(id) {
         return;
     }
 
-    const openWindows = document.querySelectorAll('main > section.open').length;
-
     win.classList.add('open');
 
-    const offset = openWindows * 35;
+    const offset = (cascadeStep % 6) * 35;
+    cascadeStep++;
+
     win.style.top = `calc(37% + ${offset}px)`;
     win.style.left = `calc(48% + ${offset}px)`;
     win.style.transform = 'translate(-50%, -50%)';
