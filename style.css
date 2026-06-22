@@ -7,6 +7,9 @@
 body {
     font-family: sans-serif;
     background: #1a5276;
+    background-image: url('assets/green.png');
+    background-size: cover;
+    background-position: center;
     height: 100vh;
     overflow: hidden;
 }
@@ -28,21 +31,29 @@ aside{
     gap: 12px;
 }
 
-aside button {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    padding: 10px 16px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-size: 14px;
-    width: 100px;
-    text-align: center;
+.top-icons {
+    display: flex;
+    gap: 12px;
 }
 
-aside button:hover {
-    background: rgba(255, 255, 255, 0.25);
+aside button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 140px;
 }
+
+aside button img {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+}
+
+aside button:hover img{
+    transform: scale(1.08);
+}
+
 
 /* JANELAS */
 main > section {
