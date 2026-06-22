@@ -21,19 +21,14 @@ main {
     position: relative;
 }
 
-/* icones da aside */
-aside{
+/* icones */
+aside {
     position: absolute;
     top: 20px;
     left: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-}
-
-.top-icons {
-    display: flex;
-    gap: 12px;
+    gap: 16px;
 }
 
 aside button {
@@ -41,19 +36,18 @@ aside button {
     border: none;
     cursor: pointer;
     padding: 0;
-    width: 140px;
+    width: 130px;
 }
 
 aside button img {
-    width: 140px;
-    height: 140px;
+    width: 130px;
+    height: 130px;
     object-fit: contain;
 }
 
-aside button:hover img{
+aside button:hover img {
     transform: scale(1.08);
 }
-
 
 /* JANELAS */
 main > section {
@@ -79,16 +73,15 @@ main > section.open {
 
 /* cabeçalho p segurar */
 section > header {
-    background: #2c3e50 ;
+    background: #2c3e50;
     color: white;
-    padding: 10px 16px ;
+    padding: 10px 16px;
     border-radius: 10px 10px 0 0;
     cursor: grab;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    user-select: none; /* p nao selecionar texto na hr de arrastar */
-
+    user-select: none;
 }
 
 section > header h2 {
@@ -99,25 +92,23 @@ section > header h2 {
 /* botao fechar */
 .btn-close {
     background: #e74c3c;
-    border: none ;
+    border: none;
     color: white;
     border-radius: 50%;
     width: 18px;
     height: 18px;
     cursor: pointer;
     font-size: 12px;
-    line-height: 18px ;
+    line-height: 18px;
     text-align: center;
     padding: 0;
 }
 
-/* conteudo da janela*/
+/* conteudo da janela */
 section > article,
 section > nav {
     padding: 20px;
 }
-
-
 
 /* taskbar */
 footer {
@@ -129,8 +120,8 @@ footer {
     background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
-    padding: 0 16px ;
-    gap: 12px ;
+    padding: 0 16px;
+    gap: 12px;
     color: white;
 }
 
@@ -138,24 +129,20 @@ footer > button {
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     color: white;
-    padding: 4px 4px ;
+    padding: 4px 4px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 13px;
-
 }
-
 
 #win-clock {
     display: flex;
     align-items: center;
-    gap: 8px ;
-    margin-left: auto ;
+    gap: 8px;
+    margin-left: auto;
     font-size: 13px;
-
 }
 
-/* esconder titulo na taskbar? */ 
 #win-clock h3 {
     display: none;
 }
@@ -178,4 +165,9 @@ footer > button {
 
 .btn-link:hover {
     background: #34495e;
+}
+
+.top-icons {
+    display: flex;
+    gap: 16px;
 }
