@@ -1,6 +1,4 @@
 // abrir e fechar janela
-let cascadeStep = 0;
-
 function toggleWin(id) {
     const win = document.getElementById(id);
 
@@ -10,10 +8,22 @@ function toggleWin(id) {
     }
 
     win.classList.add('open');
+    win.dataset.dragged = 'false'; // reset ao reabrir
 
-    const offset = (cascadeStep % 6) * 35;
-    cascadeStep++;
+    //acha o maior indice de cascata entre janelas abertas e NAO arrastadas
+    let maxIndex = -1;
+    document.querySelectorAll('main > section.open').forEach(w => {
+        if (w !== win && w.dataset.dragged !== 'true') {
+            const idx = parseInt(w.dataset.cascadeIndex ?? '-1');
+            if (idx > maxIndex) maxIndex = idx;
+        }
+    });
 
+    //abre depois da ultima janela na cascata
+    const newIndex = maxIndex + 1;
+    win.dataset.cascadeIndex = newIndex;
+
+    const offset = (newIndex % 6) * 35;
     win.style.top = `calc(37% + ${offset}px)`;
     win.style.left = `calc(48% + ${offset}px)`;
     win.style.transform = 'translate(-50%, -50%)';
@@ -48,8 +58,10 @@ document.querySelectorAll('main > section').forEach(win => {
         const startY = e.clientY - rect.top;
 
         function onMouseMove(e) {
-            const maxX = window.innerWidth - win.offsetWidth;
+            win.dataset.dragged = 'true'; //marca como arrastada ao mover
+            
             const maxY = window.innerHeight - win.offsetHeight;
+            const maxX = window.innerWidth - win.offsetWidth;
 
             let newX = e.clientX - startX;
             let newY = e.clientY - startY;
