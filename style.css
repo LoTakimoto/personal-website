@@ -28,26 +28,49 @@ aside {
     left: 20px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
+}
+.top-icons{
+    gap: 20px;
+    display: flex;
 }
 
 aside button {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
-    width: 130px;
+    padding: 12px;
+    width: 135px;
+    height: 135px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
 }
 
 aside button img {
-    width: 130px;
-    height: 130px;
+    width: 125px;
+    height: 125px;
     object-fit: contain;
+
+    transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-aside button:hover img {
-    transform: scale(1.08);
+aside button:hover img{
+    transform: translateY(-8px);
+
+    filter: 
+        drop-shadow(0 0 6px rgb(255, 238, 81))
+        drop-shadow(0 0 12px rgb(242, 255, 67))
 }
+
+#icon-about img{
+    content: url(assets/about.png);
+}
+
+#icon-about:hover img{
+    content: url(assets/abouthover.png);
+}
+
 
 /* JANELAS */
 main > section {
@@ -117,7 +140,7 @@ footer {
     left: 0;
     right: 0;
     height: 44px;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(93, 149, 163, 0.377);
     display: flex;
     align-items: center;
     padding: 0 16px;
@@ -165,9 +188,4 @@ footer > button {
 
 .btn-link:hover {
     background: #34495e;
-}
-
-.top-icons {
-    display: flex;
-    gap: 16px;
 }
