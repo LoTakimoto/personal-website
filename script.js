@@ -45,6 +45,7 @@ function bringToFront(win) {
 // drag pelo header
 document.querySelectorAll('main > section').forEach(win => {
     const header = win.querySelector('header');
+    if (!header) return;
 
     header.addEventListener('mousedown', function (e) {
         bringToFront(win);
@@ -87,10 +88,14 @@ document.querySelectorAll('main > section').forEach(win => {
 
 // relogio
 function updateClock() {
+    const tz = document.getElementById('timezone').value;
     const now = new Date();
     document.querySelector('#win-clock p').textContent =
-        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: tz});
 }
+
+document.getElementById('timezone').addEventListener('change', updateClock);
+
 updateClock();
 setInterval(updateClock, 1000);
 
