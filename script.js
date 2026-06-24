@@ -100,3 +100,40 @@ updateClock();
 setInterval(updateClock, 1000);
 
 
+//player
+const audio = document.getElementById('player-audio');
+const btnPlay = document.getElementById('btn-play');
+const seek = document.getElementById('player-seek');
+const current = document.getElementById('player-current');
+const duration = document.getElementById('player-duration');
+
+function formatTime(s) {
+    const m = Math.floor( s / 60 );
+    const sec = Math.floor( s % 60 ).toString().padStart(2, '0');
+    return `${m}:${sec}`;
+}
+
+btnPlay.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        btnPlay.textContent = '⏸';
+    } else{
+        audio.pause();
+        btnPlay.textContent = '▶';
+    }
+});
+
+audio.addEventListener('timeupdate', () => {
+    seek.value = audio.currentTime;
+    seek.max = audio.duration || 0;
+    current.textContent = formatTime(audio.currentTime);
+});
+
+audio.addEventListener('loadedmetadata', () => {
+    duration.textContent = formatTime(audio.duration);
+    seek.max = audio.duration;
+});
+
+seek.addEventListener('input', () => {
+    audio.currentTime = seek.value;
+});

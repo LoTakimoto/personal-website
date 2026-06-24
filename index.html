@@ -131,24 +131,36 @@
         <section id="win-music">
 
             <header>
-                <h2>Favourite song</h2>
+                <h2>Music</h2>
                 <button class="btn-close" onclick="closeWin('win-music')">X</button>
             </header>
 
-            <article>
+            <article class="player">
 
-                <p>
-                    Current song:
-                </p>
+                <div class="player-cover">
+                    <img src="https://i.scdn.co/image/ab67616d0000b27393863f00132e7aeb77166c35">
+                </div>
 
-                <p>
-                    blablabla
-                </p>
+                <div class="player-info">
+                    <p class="player-title">I'm Not Them</p>
+                    <p class="player-artist">Them & I</p>
+                </div>
 
-                <audio controls>
-                    <source src="eba.mp3" type="audio/mpeg">
+                <div class="player-bar">
+                    <span id="player-current">0:00</span>
+                    <input type="range" id="player-seek" value="0" min="0" step="1">
+                    <span id="player-duration">0:00</span>
+                </div>
+
+                <div class="player-controls">
+                    <button id="btn-prev">⏮</button>
+                    <button id="btn-play">▶</button>
+                    <button id="btn-next">⏭</button>
+                </div>
+
+                <audio id="player-audio">
+                    <source src="assets/ImNotThem.mp3" type="audio/mpeg">
                 </audio>
-
             </article>
 
         </section>
