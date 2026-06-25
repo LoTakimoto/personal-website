@@ -55,12 +55,15 @@ aside button img {
     transition: transform 0.35s ease, filter 0.35s ease;
 }
 
-aside button:hover img{
-    transform: translateY(-8px);
+@keyframes brilho-pulse {
+    0% {filter: drop-shadow(0 0 2px rgb(255, 238, 81)) drop-shadow(0 0 3px rgb(242, 255, 67)); }
+    50% {filter: drop-shadow(0 0 6px rgb(255, 238, 81)) drop-shadow(0 0 12px rgb(242, 255, 67));}
+    100% {filter: drop-shadow(0 0 2px rgb(255, 238, 81)) drop-shadow(0 0 3px rgb(242, 255, 67));}
+}
 
-    filter: 
-        drop-shadow(0 0 6px rgb(255, 238, 81))
-        drop-shadow(0 0 12px rgb(242, 255, 67))
+aside button:hover img {
+    transform: translateY(-8px);
+    animation: brilho-pulse 1.55s ease-in-out infinite;
 }
 
 #icon-about img{
