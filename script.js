@@ -138,27 +138,33 @@ seek.addEventListener('input', () => {
     audio.currentTime = seek.value;
 });
 
+//
+
 const musicBtn = document.getElementById('icon-music');
 const musicImg = musicBtn.querySelector('img');
 const musicFrames = [
-    'assets/musichover1.png',
-    'assets/musichover2.png',
-    'assets/musichover3.png',
-    'assets/musichover2.png'
+    'assets/music2.png',
+    'assets/music3.png',
+    'assets/music4.png',
+    'assets/music3.png'
 ];
+const musicSpeeds = [330, 330, 310, 330];
 
 let musicInterval = null;
 let musicFrame = 0;
 
 musicBtn.addEventListener('mouseenter', () => {
     musicFrame = 0;
-    musicInterval = setInterval(() => {
+    function nextFrame() {
         musicImg.src = musicFrames[musicFrame];
+        const delay = musicSpeeds[musicFrame];
         musicFrame = (musicFrame + 1) % musicFrames.length;
-        }, 250);
-    });
+        musicInterval = setTimeout(nextFrame, delay);
+    }
+    nextFrame();
+});
 
 musicBtn.addEventListener('mouseleave', () => {
-        clearInterval(musicInterval);
-        musicImg.src = 'assets/music1.png';
+    clearTimeout(musicInterval);
+    musicImg.src = 'assets/music1.png'
 });
