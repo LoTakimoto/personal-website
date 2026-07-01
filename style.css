@@ -81,18 +81,14 @@ aside button:hover img {
 main > section {
     display: none;
     position: absolute;
-
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
-
-    width: 480px;
-    min-height: 300px;
-    background: white;
-    border-radius: 10px;
-    border: 1px solid #ddd;
+    transform: translate(-50%, -50%);
+    width: 520px;
+    border: none;
     z-index: 10;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18)
+    background: none;
+    box-shadow: none;
 }
 
 main > section.open {
@@ -101,25 +97,24 @@ main > section.open {
 
 /* cabeçalho p segurar */
 section > header {
-    background: #2c3e50;
-    color: white;
-    padding: 10px 16px;
+    background: url('assets/cima.png') center/100% 100% no-repeat;
+    height: 50px;
     border-radius: 10px 10px 0 0;
     cursor: grab;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
+    padding: 0 12px;
     user-select: none;
 }
 
 section > header h2 {
-    font-size: 15px;
-    font-weight: 600;
+    display: none;
 }
 
 /* botao fechar */
 .btn-close {
-    background: #e74c3c;
+    background: none;
     border: none;
     color: white;
     border-radius: 50%;
@@ -135,7 +130,10 @@ section > header h2 {
 /* conteudo da janela */
 section > article,
 section > nav {
+    background: url('assets/baixo.png') center/100% 100% no-repeat;
     padding: 20px;
+    border-radius: 0 0 10px 10px;
+    min-height: 250px;
 }
 
 /* foto redonda no about */
