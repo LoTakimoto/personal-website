@@ -8,9 +8,16 @@ function toggleWin(id) {
     }
 
     win.classList.add('open');
-    win.dataset.dragged = 'false'; // reset ao reabrir
+    win.dataset.dragged = 'false';
 
-    //acha o maior indice de cascata entre janelas abertas e NAO arrastadas
+    if (id === 'win-music') {
+        bringToFront(win);
+        win.style.top = '46%';
+        win.style.left = 'auto';
+        win.style.right = '20px';
+        win.style.transform = 'translateY(-50%)';
+        return;
+    }
     let maxIndex = -1;
     document.querySelectorAll('main > section.open').forEach(w => {
         if (w !== win && w.dataset.dragged !== 'true') {
@@ -19,8 +26,7 @@ function toggleWin(id) {
         }
     });
 
-    //abre depois da ultima janela na cascata
-    const newIndex = maxIndex + 1;
+const newIndex = maxIndex + 1;
     win.dataset.cascadeIndex = newIndex;
 
     const offset = (newIndex % 6) * 35;

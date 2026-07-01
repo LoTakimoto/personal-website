@@ -86,8 +86,8 @@ main > section {
     left: 50%;
     transform: translate(-50%, -50%); 
 
-    width: 500px;
-    min-height: 300px;
+    width: 550px;
+    min-height: 350px;
     background: white;
     border-radius: 12px;
     border: 1.5px solid #c8d0d8;
@@ -244,12 +244,11 @@ footer > button {
     transform: translate(6px);
 }
 
-
-
-
 #win-music {
-    width: 320px;
+    width: 280px;
     min-height: unset;
+    left: auto;
+    right: 20px;
 }
 
 .player {
