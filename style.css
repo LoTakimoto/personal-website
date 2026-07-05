@@ -152,6 +152,7 @@ section > header h2 {
 /* conteudo da janela */
 section > article,
 section > nav {
+    font-family: 'Baloo 2', sans-serif;
     padding: 24px;
     background: white;
 }
@@ -407,19 +408,32 @@ footer > button {
 
 #welcome-clock {
     position: absolute;
-    top: 35%;
+    top: 30%;
     text-align: center;
     color: #2c3e50;
     font-family: 'Baloo 2', sans-serif;
 }
 
 #welcome-time {
-    font-size: 48px;
+    font-size: 64px;
     font-weight: 700;
     line-height: 1;
 }
 
 #welcome-date {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 600;
+    color: #575f66;
+}
+
+#welcome-divider {
+    border-top: 1px solid #aaa;
+    margin: 10px auto;
+    width: 215px;
+}
+
+#welcome-tz {
+    font-size: 15px;
+    font-weight: 600;
+    color: #63676b;
 }
