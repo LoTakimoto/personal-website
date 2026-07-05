@@ -404,3 +404,22 @@ footer > button {
 #welcome-enter:hover {
     transform: scale(1.05);
 }
+
+#welcome-clock {
+    position: absolute;
+    top: 35%;
+    text-align: center;
+    color: #2c3e50;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+#welcome-time {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+#welcome-date {
+    font-size: 16px;
+    font-weight: 400;
+}

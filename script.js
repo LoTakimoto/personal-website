@@ -189,3 +189,13 @@ function enterSite() {
     screen.style.opacity = '0';
     setTimeout(() => screen.style.display = 'none', 1000);
 }
+
+function updateWelcomeClock() {
+    const now = new Date();
+    document.getElementById('welcome-time').textContent =
+        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('welcome-date').textContent =
+        now.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })
+        }
+updateWelcomeClock();
+setInterval(updateWelcomeClock, 1000);
