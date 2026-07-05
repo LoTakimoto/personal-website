@@ -174,3 +174,15 @@ musicBtn.addEventListener('mouseleave', () => {
     clearTimeout(musicInterval);
     musicImg.src = 'assets/music1.png'
 });
+
+document.querySelectorAll('aside button').forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.classList.add('clicked');
+        setTimeout(() => btn.classList.remove('clicked'), 250);
+    });
+});
+
+
+function enterSite() {
+    document.getElementById('welcome-screen').style.display = 'none';
+}
