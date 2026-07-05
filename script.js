@@ -184,5 +184,8 @@ document.querySelectorAll('aside button').forEach(btn => {
 
 
 function enterSite() {
-    document.getElementById('welcome-screen').style.display = 'none';
+    const screen = document.getElementById('welcome-screen');
+    screen.style.transition = 'opacity 1s ease';
+    screen.style.opacity = '0';
+    setTimeout(() => screen.style.display = 'none', 1000);
 }
