@@ -199,3 +199,32 @@ function updateWelcomeClock() {
         }
 updateWelcomeClock();
 setInterval(updateWelcomeClock, 1000);
+
+
+const clickSound = new Audio('assets/click.mp3');
+
+document.querySelectorAll('aside button').forEach(btn => {
+    btn.addEventListener('click', () => { 
+        clickSound.currentTime = 0;
+        clickSound.volume = 0.3;
+        clickSound.play();
+    })
+})
+
+const hoverSound1 = new Audio('assets/hover1.mp3');
+const hoverSound2 = new Audio('assets/hover2.mp3');
+hoverSound1.volume = 0.25;
+hoverSound2.volume = 0.15;
+
+document.querySelectorAll('aside button').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+        hoverSound1.currentTime = 0;
+        hoverSound1.play();
+
+        if (btn.id === 'icon-about') {
+            hoverSound2.currentTime = 0;
+            hoverSound2.play();
+        }
+    });
+});
+
