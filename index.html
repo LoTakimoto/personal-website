@@ -8,8 +8,7 @@
 </head>
 
 <body>
-    <!-- WELCOME -->
-         <!-- WELCOME -->
+    <!-- WELCOME SCREEN -->
     <div id="welcome-screen">
         <div id="welcome-card">
             <img src="assets/welcome1.png" id="welcome-bg" alt="welcome card">
@@ -30,7 +29,7 @@
 
     <main>
 
-        <!--  ICONS  -->
+        <!--  DESKTOP ICONS  -->
         <aside>
 
             <div class="top-icons">                
@@ -54,7 +53,7 @@
 
         </aside>
 
-        <!--  ABOUT ME  -->
+        <!--  WINDOW: ABOUT ME  -->
         <section id="win-about">
 
             <header>
@@ -64,7 +63,7 @@
 
             <article>
                 <div class="about-top">
-                    <img src="assets/takis.jpg" class="about-photo" alt="photo">
+                    <img src="assets/takis.jpg" class="about-photo" alt="photo" onclick="toggleWin('win-about2')">
                 </div>
 
                 <p>
@@ -83,7 +82,18 @@
 
         </section>
 
-        <!-- JOURNEY  -->
+        <!-- WINDOW: ABOUT ME 2 (opens on photo click) -->
+        <section id="win-about2">
+            <header>
+                <h2>TEST</h2>
+                <button class="btn-close" onclick="closeWin('win-about2')">[x]</button>
+            </header>
+            <article>
+                <p>Em breve...</p>
+            </article>
+        </section>
+
+        <!-- WINDOW: JOURNEY  -->
         <section id="win-journey">
 
             <header>
@@ -94,17 +104,16 @@
             <article>
 
                 <ul>
-                    <li>Ano 1</li>
-                    <li>Ano 2</li>
-                    <li>Ano 3</li>
-                    <li>Ano 4</li>
+                    <li>Exemplo 1</li>
+                    <li>Exemplo 2</li>
+                    <li>Exemplo 3</li>
                 </ul>
 
             </article>
 
         </section>
 
-        <!-- SOCIALS  -->
+        <!-- WINDOW: SOCIALS  -->
         <section id="win-socials">
 
             <header>
@@ -120,7 +129,7 @@
 
         </section>
 
-        <!-- PROJECTS -->
+        <!-- WINDOW: PROJECTS -->
         <section id="win-projects">
             
             <header>
@@ -148,7 +157,7 @@
 
         </section>
 
-        <!-- MUSIC -->
+        <!-- WINDOW: MUSIC PLAYER! -->
         <section id="win-music">
 
             <header>

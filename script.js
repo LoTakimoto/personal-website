@@ -1,4 +1,6 @@
-// abrir e fechar janela
+// ==========================
+// OPEN & CLOSE SYSTEM
+// ==========================
 function toggleWin(id) {
     const win = document.getElementById(id);
 
@@ -10,6 +12,8 @@ function toggleWin(id) {
     win.classList.add('open');
     win.dataset.dragged = 'false';
 
+    // MUSIC PLAYER OPENS FIXED ON THE RIGHT
+
     if (id === 'win-music') {
         bringToFront(win);
         win.style.top = '46%';
@@ -18,6 +22,8 @@ function toggleWin(id) {
         win.style.transform = 'translateY(-50%)';
         return;
     }
+
+    // CASCADE LOGIC 
     let maxIndex = -1;
     document.querySelectorAll('main > section.open').forEach(w => {
         if (w !== win && w.dataset.dragged !== 'true') {
@@ -37,18 +43,22 @@ const newIndex = maxIndex + 1;
     bringToFront(win);
 }
 
-// Fechar pelo botao 'X'
+// CLOSE WINDOW [x]
 function closeWin(id) {
     document.getElementById(id).classList.remove('open');
 }
 
-// traz janela pra frente ao clicar
+// ==========================
+// WINDOW Z-INDEX (BRING THE WINDOW TO THE FRONT)
+// ==========================
 let zCounter = 10;
 function bringToFront(win) {
     win.style.zIndex = ++zCounter;
 }
 
-// drag pelo header
+// ==========================
+// WINDOW DRAG
+// ==========================
 document.querySelectorAll('main > section').forEach(win => {
     const header = win.querySelector('header');
     if (!header) return;
@@ -92,7 +102,9 @@ document.querySelectorAll('main > section').forEach(win => {
     win.addEventListener('mousedown', () => bringToFront(win));
 });
 
-// relogio
+// ==========================
+// TASKBAR CLOCK
+// ==========================
 function updateClock() {
     const tz = document.getElementById('timezone').value;
     const now = new Date();
@@ -106,7 +118,9 @@ updateClock();
 setInterval(updateClock, 1000);
 
 
-//player
+// ==========================
+// MUSIC PLAYER
+// ==========================
 const audio = document.getElementById('player-audio');
 const btnPlay = document.getElementById('btn-play');
 const seek = document.getElementById('player-seek');
@@ -144,7 +158,9 @@ seek.addEventListener('input', () => {
     audio.currentTime = seek.value;
 });
 
-//
+// ==========================
+// MUSIC ICON ANIMATION
+// ==========================
 
 const musicBtn = document.getElementById('icon-music');
 const musicImg = musicBtn.querySelector('img');
@@ -175,6 +191,9 @@ musicBtn.addEventListener('mouseleave', () => {
     musicImg.src = 'assets/music1.png'
 });
 
+// ==========================
+// ICON CLICK ANIMATION
+// ==========================
 document.querySelectorAll('aside button').forEach(btn => {
     btn.addEventListener('click', () => {
         btn.classList.add('clicked');
@@ -182,6 +201,9 @@ document.querySelectorAll('aside button').forEach(btn => {
     });
 });
 
+// ==========================
+// WELCOME SCREEN
+// ==========================
 
 function enterSite() {
     const screen = document.getElementById('welcome-screen');
@@ -200,8 +222,12 @@ function updateWelcomeClock() {
 updateWelcomeClock();
 setInterval(updateWelcomeClock, 1000);
 
-
+// ==========================
+// SOUND EFFECTS
+// ==========================
 const clickSound = new Audio('assets/click.mp3');
+clickSound.volume = 0.3;
+
 
 document.querySelectorAll('aside button').forEach(btn => {
     btn.addEventListener('click', () => { 
@@ -228,3 +254,12 @@ document.querySelectorAll('aside button').forEach(btn => {
     });
 });
 
+document.querySelector('.btn-link').addEventListener('click', () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+});
+
+document.querySelector('.about-photo').addEventListener('click', () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+})
