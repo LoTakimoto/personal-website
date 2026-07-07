@@ -32,7 +32,7 @@ function toggleWin(id) {
         }
     });
 
-const newIndex = maxIndex + 1;
+    const newIndex = maxIndex + 1;
     win.dataset.cascadeIndex = newIndex;
 
     const offset = (newIndex % 6) * 35;
@@ -76,7 +76,7 @@ document.querySelectorAll('main > section').forEach(win => {
 
         function onMouseMove(e) {
             win.dataset.dragged = 'true'; //marca como arrastada ao mover
-            
+
             const maxY = window.innerHeight - win.offsetHeight;
             const maxX = window.innerWidth - win.offsetWidth;
 
@@ -109,7 +109,7 @@ function updateClock() {
     const tz = document.getElementById('timezone').value;
     const now = new Date();
     document.querySelector('#win-clock p').textContent =
-        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: tz});
+        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: tz });
 }
 
 document.getElementById('timezone').addEventListener('change', updateClock);
@@ -128,8 +128,8 @@ const current = document.getElementById('player-current');
 const duration = document.getElementById('player-duration');
 
 function formatTime(s) {
-    const m = Math.floor( s / 60 );
-    const sec = Math.floor( s % 60 ).toString().padStart(2, '0');
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60).toString().padStart(2, '0');
     return `${m}:${sec}`;
 }
 
@@ -137,7 +137,7 @@ btnPlay.addEventListener('click', () => {
     if (audio.paused) {
         audio.play();
         btnPlay.textContent = '⏸';
-    } else{
+    } else {
         audio.pause();
         btnPlay.textContent = '▶';
     }
@@ -205,11 +205,19 @@ document.querySelectorAll('aside button').forEach(btn => {
 // WELCOME SCREEN
 // ==========================
 
+const welcomeSound = new Audio('assets/welcome.mp3');
+welcomeSound.volume = 0.6;
+
 function enterSite() {
-    const screen = document.getElementById('welcome-screen');
-    screen.style.transition = 'opacity 1s ease';
-    screen.style.opacity = '0';
-    setTimeout(() => screen.style.display = 'none', 1000);
+    setTimeout(() => {
+        welcomeSound.currentTime = 0;
+        welcomeSound.play();
+
+        const screen = document.getElementById('welcome-screen');
+        screen.style.transition = 'opacity 1s ease';
+        screen.style.opacity = '0';
+        setTimeout(() => screen.style.display = 'none', 1000);
+    }, 450);
 }
 
 function updateWelcomeClock() {
@@ -218,29 +226,41 @@ function updateWelcomeClock() {
         now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     document.getElementById('welcome-date').textContent =
         now.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })
-        }
+}
 updateWelcomeClock();
 setInterval(updateWelcomeClock, 1000);
 
 // ==========================
-// SOUND EFFECTS
+// SOUND EFFECTS — CLIQUE
 // ==========================
 const clickSound = new Audio('assets/click.mp3');
 clickSound.volume = 0.3;
 
-
 document.querySelectorAll('aside button').forEach(btn => {
-    btn.addEventListener('click', () => { 
+    btn.addEventListener('click', () => {
         clickSound.currentTime = 0;
         clickSound.volume = 0.3;
         clickSound.play();
-    })
-})
+    });
+});
 
+// ==========================
+// SOUND EFFECTS — HOVER (todos os sons juntos, um só listener)
+// ==========================
 const hoverSound1 = new Audio('assets/hover1.mp3');
-const hoverSound2 = new Audio('assets/hover2.mp3');
 hoverSound1.volume = 0.25;
+
+const hoverSound2 = new Audio('assets/hover2.mp3');
 hoverSound2.volume = 0.15;
+
+const hoverSound3 = new Audio('assets/paper.wav');
+hoverSound3.volume = 0.05;
+
+const hoverSound4 = new Audio('assets/#.mp3');
+hoverSound4.volume = 0.03;
+
+const hoverSound5 = new Audio('assets/bubble.mp3');
+hoverSound5.volume = 0.035;
 
 document.querySelectorAll('aside button').forEach(btn => {
     btn.addEventListener('mouseenter', () => {
@@ -250,6 +270,21 @@ document.querySelectorAll('aside button').forEach(btn => {
         if (btn.id === 'icon-about') {
             hoverSound2.currentTime = 0;
             hoverSound2.play();
+        }
+
+        if (btn.id === 'icon-projects') {
+            hoverSound3.currentTime = 0;
+            hoverSound3.play();
+        }
+
+        if (btn.id === 'icon-music') {
+            hoverSound4.currentTime = 0;
+            hoverSound4.play();
+        }
+
+        if (btn.id === 'icon-socials') {
+            hoverSound5.currentTime = 0;
+            hoverSound5.play();
         }
     });
 });
@@ -263,3 +298,14 @@ document.querySelector('.about-photo').addEventListener('click', () => {
     clickSound.currentTime = 0;
     clickSound.play();
 })
+
+
+const welcomeEnter = document.getElementById('welcome-enter');
+
+welcomeEnter.addEventListener('click', () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    welcomeEnter.classList.add('clicked');
+    setTimeout(() => welcomeEnter.classList.remove('clicked'), 250);
+});
