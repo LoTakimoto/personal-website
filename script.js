@@ -121,6 +121,12 @@ document.getElementById('tz-arrow').addEventListener('click', () => {   // <- fo
     document.getElementById('timezone').click();
 });
 
+document.getElementById('timezone').addEventListener('change', () => {
+    const sel = document.getElementById('timezone');
+    document.getElementById('tz-label').textContent = sel.options[sel.selectedIndex].text;
+    updateClock();
+});
+
 updateClock();
 setInterval(updateClock, 1000);
 
@@ -213,7 +219,7 @@ document.querySelectorAll('aside button').forEach(btn => {
 // ==========================
 
 const welcomeSound = new Audio('assets/welcome.mp3');
-welcomeSound.volume = 0.6;
+welcomeSound.volume = 1;
 
 function enterSite() {
     setTimeout(() => {
@@ -318,8 +324,3 @@ welcomeEnter.addEventListener('click', () => {
 });
 
 
-document.getElementById('timezone').addEventListener('change', () => {
-    const sel = document.getElementById('timezone');
-    document.getElementById('tz-label').textContent = sel.options[sel.selectedIndex].text;
-    updateClock();
-});
