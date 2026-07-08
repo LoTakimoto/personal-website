@@ -108,12 +108,11 @@ document.querySelectorAll('main > section').forEach(win => {
 function updateClock() {
     const tz = document.getElementById('timezone').value;
     const now = new Date();
-    document.querySelector('#win-clock p').textContent =
+    document.getElementById('clock-display').textContent =
         now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: tz });
 }
 
 document.getElementById('timezone').addEventListener('change', updateClock);
-
 updateClock();
 setInterval(updateClock, 1000);
 
@@ -307,5 +306,5 @@ welcomeEnter.addEventListener('click', () => {
     clickSound.play();
 
     welcomeEnter.classList.add('clicked');
-    setTimeout(() => welcomeEnter.classList.remove('clicked'), 250);
+    setTimeout(() => welcomeEnter.classList.remove('clicked'), 400);
 });
