@@ -105,6 +105,9 @@ document.querySelectorAll('main > section').forEach(win => {
 // ==========================
 // TASKBAR CLOCK
 // ==========================
+// ==========================
+// TASKBAR CLOCK
+// ==========================
 function updateClock() {
     const tz = document.getElementById('timezone').value;
     const now = new Date();
@@ -113,6 +116,11 @@ function updateClock() {
 }
 
 document.getElementById('timezone').addEventListener('change', updateClock);
+
+document.getElementById('tz-arrow').addEventListener('click', () => {   // <- fora do updateClock
+    document.getElementById('timezone').click();
+});
+
 updateClock();
 setInterval(updateClock, 1000);
 
@@ -307,4 +315,11 @@ welcomeEnter.addEventListener('click', () => {
 
     welcomeEnter.classList.add('clicked');
     setTimeout(() => welcomeEnter.classList.remove('clicked'), 400);
+});
+
+
+document.getElementById('timezone').addEventListener('change', () => {
+    const sel = document.getElementById('timezone');
+    document.getElementById('tz-label').textContent = sel.options[sel.selectedIndex].text;
+    updateClock();
 });
