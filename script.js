@@ -323,35 +323,42 @@ hoverSound4.volume = 0.67;
 const hoverSound5 = new Audio('assets/bubble.mp3');
 hoverSound5.volume = 0.1;
 
+let hoverTimeout = null;
+
 document.querySelectorAll('aside button').forEach(btn => {
     btn.addEventListener('mouseenter', () => {
-        hoverSound1.currentTime = 0;
-        hoverSound1.play();
+        hoverTimeout = setTimeout(() => {
+            hoverSound1.currentTime = 0;
+            hoverSound1.play();
 
-        if (btn.id === 'icon-about') {
-            hoverSound2.currentTime = 0;
-            hoverSound2.play();
-        }
+            if (btn.id === 'icon-about') {
+                hoverSound2.currentTime = 0;
+                hoverSound2.play();
+            }
 
-        if (btn.id === 'icon-projects') {
-            hoverSound3.currentTime = 0;
-            hoverSound3.play();
-        }
+            if (btn.id === 'icon-projects') {
+                hoverSound3.currentTime = 0;
+                hoverSound3.play();
+            }
 
-        if (btn.id === 'icon-music') {
-            setTimeout(() => {
-                hoverSound4.currentTime = 0;
-                hoverSound4.play();
-            }, 250);
-        }
+            if (btn.id === 'icon-music') {
+                setTimeout(() => {
+                    hoverSound4.currentTime = 0;
+                    hoverSound4.play();
+                }, 250);
+            }
 
-        if (btn.id === 'icon-socials') {
-            setTimeout(() => {
-                hoverSound5.currentTime = 0;
-                hoverSound5.play();
-            }, 250);
-            
-        }
+            if (btn.id === 'icon-socials') {
+                setTimeout(() => {
+                    hoverSound5.currentTime = 0;
+                    hoverSound5.play();
+                }, 250);
+            }
+        }, 120);
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        clearTimeout(hoverTimeout);
     });
 });
 
@@ -363,8 +370,7 @@ document.querySelector('.btn-link').addEventListener('click', () => {
 document.querySelector('.about-photo').addEventListener('click', () => {
     clickSound.currentTime = 0;
     clickSound.play();
-})
-
+});
 
 const welcomeEnter = document.getElementById('welcome-enter');
 
