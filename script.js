@@ -105,26 +105,57 @@ document.querySelectorAll('main > section').forEach(win => {
 // ==========================
 // TASKBAR CLOCK
 // ==========================
-// ==========================
-// TASKBAR CLOCK
-// ==========================
+
+const tzPositions = {
+    'America/Sao_Paulo': '77px',
+    'America/Toronto':   '90px',
+    'Europe/London':     '100px',
+    'Asia/Tokyo':        '88px'
+};
+
+let currentTz = 'America/Sao_Paulo';
+
 function updateClock() {
-    const tz = document.getElementById('timezone').value;
     const now = new Date();
-    document.getElementById('clock-display').textContent =
-        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: tz });
+    const time = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: currentTz });
+    const [hours, minutes] = time.split(':');
+    document.getElementById('clock-display').innerHTML =
+        `${hours}<span id="clock-colon">:</span>${minutes}`;
 }
 
-document.getElementById('timezone').addEventListener('change', updateClock);
+// open/close dropdown
+document.getElementById('tz-arrow-wrap').addEventListener('click', () => {
+    const arrow = document.getElementById('tz-arrow');
+    arrow.classList.add('clicked');
+    setTimeout(() => arrow.classList.remove('clicked'), 300);
 
-document.getElementById('tz-arrow').addEventListener('click', () => {   // <- fora do updateClock
-    document.getElementById('timezone').click();
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    document.getElementById('tz-dropdown').classList.toggle('open');
 });
 
-document.getElementById('timezone').addEventListener('change', () => {
-    const sel = document.getElementById('timezone');
-    document.getElementById('tz-label').textContent = sel.options[sel.selectedIndex].text;
-    updateClock();
+// timezone select
+document.querySelectorAll('#tz-dropdown li').forEach(li => {
+    li.addEventListener('click', () => {
+        currentTz = li.dataset.tz;
+
+        document.getElementById('tz-label').textContent = li.textContent;
+        document.getElementById('tz-selector').style.right = tzPositions[currentTz] || '77px';
+
+        document.querySelectorAll('#tz-dropdown li').forEach(i => i.classList.remove('active'));
+        li.classList.add('active');
+
+        document.getElementById('tz-dropdown').classList.remove('open');
+        updateClock();
+    });
+});
+
+// close when clicked outside
+document.addEventListener('click', (e) => {
+    if (!document.getElementById('tz-selector').contains(e.target)) {
+        document.getElementById('tz-dropdown').classList.remove('open');
+    }
 });
 
 updateClock();
@@ -135,6 +166,7 @@ setInterval(updateClock, 1000);
 // MUSIC PLAYER
 // ==========================
 const audio = document.getElementById('player-audio');
+audio.volume = 0.5;
 const btnPlay = document.getElementById('btn-play');
 const seek = document.getElementById('player-seek');
 const current = document.getElementById('player-current');
@@ -252,7 +284,7 @@ clickSound.volume = 0.3;
 document.querySelectorAll('aside button').forEach(btn => {
     btn.addEventListener('click', () => {
         clickSound.currentTime = 0;
-        clickSound.volume = 0.3;
+        clickSound.volume = 0.67;
         clickSound.play();
     });
 });
@@ -261,19 +293,19 @@ document.querySelectorAll('aside button').forEach(btn => {
 // SOUND EFFECTS — HOVER (todos os sons juntos, um só listener)
 // ==========================
 const hoverSound1 = new Audio('assets/hover1.mp3');
-hoverSound1.volume = 0.25;
+hoverSound1.volume = 0.6;
 
 const hoverSound2 = new Audio('assets/hover2.mp3');
-hoverSound2.volume = 0.15;
+hoverSound2.volume = 0.5;
 
 const hoverSound3 = new Audio('assets/paper.wav');
-hoverSound3.volume = 0.05;
+hoverSound3.volume = 0.5;
 
 const hoverSound4 = new Audio('assets/#.mp3');
-hoverSound4.volume = 0.03;
+hoverSound4.volume = 0.5;
 
 const hoverSound5 = new Audio('assets/bubble.mp3');
-hoverSound5.volume = 0.035;
+hoverSound5.volume = 0.4;
 
 document.querySelectorAll('aside button').forEach(btn => {
     btn.addEventListener('mouseenter', () => {
@@ -296,8 +328,11 @@ document.querySelectorAll('aside button').forEach(btn => {
         }
 
         if (btn.id === 'icon-socials') {
-            hoverSound5.currentTime = 0;
-            hoverSound5.play();
+            setTimeout(() => {
+                hoverSound5.currentTime = 0;
+                hoverSound5.play();
+            }, 250);
+            
         }
     });
 });
