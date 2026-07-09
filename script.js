@@ -103,24 +103,40 @@ document.querySelectorAll('main > section').forEach(win => {
 });
 
 // ==========================
-// TASKBAR CLOCK
+// TASKBAR 
 // ==========================
 
+//settings 
+
+document.getElementById('settings-btn').addEventListener('click', () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    const btn = document.getElementById('settings-btn');
+    btn.classList.add('clicked');
+    setTimeout(() => btn.classList.remove('clicked'), 200);
+});
+
+
+
+
+//taskbar-clock
+
 const tzPositions = {
-    'America/Sao_Paulo': '77px',
-    'America/Toronto':   '90px',
-    'Europe/London':     '100px',
+    'America/Sao_Paulo': '72px',
+    'America/Toronto':   '80px',
+    'Europe/London':     '80px',
     'Asia/Tokyo':        '88px'
-};
+}; 
+
+document.getElementById('tz-selector').style.right = tzPositions['America/Sao_Paulo'];
 
 let currentTz = 'America/Sao_Paulo';
 
 function updateClock() {
     const now = new Date();
     const time = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: currentTz });
-    const [hours, minutes] = time.split(':');
-    document.getElementById('clock-display').innerHTML =
-        `${hours}<span id="clock-colon">:</span>${minutes}`;
+    document.getElementById('clock-display').textContent = time;
 }
 
 // open/close dropdown
@@ -299,13 +315,13 @@ const hoverSound2 = new Audio('assets/hover2.mp3');
 hoverSound2.volume = 0.5;
 
 const hoverSound3 = new Audio('assets/paper.wav');
-hoverSound3.volume = 0.5;
+hoverSound3.volume = 0.4;
 
-const hoverSound4 = new Audio('assets/#.mp3');
-hoverSound4.volume = 0.5;
+const hoverSound4 = new Audio('assets/musicplayer.mp3');
+hoverSound4.volume = 0.67;
 
 const hoverSound5 = new Audio('assets/bubble.mp3');
-hoverSound5.volume = 0.4;
+hoverSound5.volume = 0.1;
 
 document.querySelectorAll('aside button').forEach(btn => {
     btn.addEventListener('mouseenter', () => {
@@ -323,8 +339,10 @@ document.querySelectorAll('aside button').forEach(btn => {
         }
 
         if (btn.id === 'icon-music') {
-            hoverSound4.currentTime = 0;
-            hoverSound4.play();
+            setTimeout(() => {
+                hoverSound4.currentTime = 0;
+                hoverSound4.play();
+            }, 250);
         }
 
         if (btn.id === 'icon-socials') {
@@ -356,6 +374,29 @@ welcomeEnter.addEventListener('click', () => {
 
     welcomeEnter.classList.add('clicked');
     setTimeout(() => welcomeEnter.classList.remove('clicked'), 400);
+});
+
+// MUTE BUTTON
+
+let isMuted = false;
+
+const allSounds = [ 
+    clickSound, hoverSound1, hoverSound2, hoverSound3, hoverSound4, hoverSound5, welcomeSound
+];
+
+document.getElementById('sound-btn').addEventListener('click', () => {
+    isMuted = !isMuted;
+
+    allSounds.forEach(s => s.muted = isMuted);
+    audio.muted = isMuted; 
+
+    document.getElementById('sound-btn').src = isMuted
+        ? 'assets/soundoff.png'
+        : 'assets/soundon.png';
+
+        const btn = document.getElementById('sound-btn');
+        btn.classList.add('clicked');
+        setTimeout(() => btn.classList.remove('clicked'), 300);
 });
 
 
