@@ -165,8 +165,9 @@
         <section id="win-music">
 
             <header>
-                <h2>Music</h2>
-                <button class="btn-close" onclick="closeWin('win-music')">[x]</button>
+                <img src="assets/playlistbutton.png" class="music-btn" id="btn-playlist-toggle">
+                <img src="assets/infobutton.png" class="music-btn" id="btn-info">
+                <img src="assets/closebutton.png" class="music-btn" onclick="closeWin('win-music')">
             </header>
 
             <article class="player">
@@ -198,10 +199,14 @@
                 </audio>
             </article>
 
+            <div id ="music-bottom-bar"></div>
+
         </section>
 
     <!--  TASKBAR -->
     <footer>
+
+        <img src="assets/home.png" id="home-btn">
 
         <img src="assets/soundon.png" id="sound-btn">
 

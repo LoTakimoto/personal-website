@@ -219,6 +219,11 @@ footer {
     cursor: pointer;
 }
 
+#tz-selector:hover #tz-arrow {
+    transform: scale(1.2);
+    transition: transform 0.2s ease;
+}
+
 #tz-label {
     font-size: 17px;
     font-weight: 750;
@@ -252,12 +257,6 @@ footer {
     width: 18px;
     height: 18px;
     object-fit: contain;
-    pointer-events: none;
-    transition: transform 0.2s ease;
-}
-
-#tz-arrow-wrap:hover #tz-arrow {
-    transform: scale(1.2);
 }
 
 @keyframes arrow-bounce {
@@ -363,28 +362,25 @@ footer {
 }
 
 
-
-
-
-
-
-#win-clock {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-left: 0;
-    font-size: 13px;
-    font-family: 'Baloo 2', sans-serif;
+#home-btn {
+    position: absolute;
+    left: 142px;
+    width: 47.5px;
+    height: 47.5px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-#win-clock h3 {
-    display: none;
+#home-btn:hover {
+    transform: scale(1.1);
 }
 
-#win-clock select {
-    font-size: 12px;
-    padding: 2px 4px;
-}
+
+
+
+
+
 
 .btn-link {
     background: #2c3e50;
@@ -427,11 +423,66 @@ footer {
 }
 
 #win-music {
-    width: 280px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    width: 300px;
     min-height: unset;
     left: auto;
     right: 20px;
+    overflow: visible;
+    border-radius: 0;
 }
+
+#win-music > header {
+    background: url('assets/musichead.png') no-repeat center / 100% 100%;
+    height: 60px;
+    padding: 0 12px;
+    width: 302.5px;
+    margin-left: -2px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 0;
+    margin-bottom: -6px;
+}
+
+
+#music-bottom-bar {
+    background-image: url('assets/musicbottom.png');
+    background-size: 100% 100%;
+    height: 54px;
+    border-radius: 0;
+    margin-left: -4.98px;
+    width: 308px;
+    margin-top: -3px;
+}
+
+.music-btn {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.music-btn:hover {
+    transform: scale(1.085);
+}
+
+#btn-playlist-toggle {
+    margin-right: 1px;
+}
+
+#btn-info {
+    margin-right: 4px;
+}
+
+
+
+
+
+
 
 .player {
     display: flex;
@@ -440,7 +491,9 @@ footer {
     gap: 14px;
     padding: 20px;
     background: #1a1a2e;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0;
+    margin: 0;
+    width: 300px;
 }
 
 .player-cover {

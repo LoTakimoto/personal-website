@@ -178,6 +178,25 @@ updateClock();
 setInterval(updateClock, 1000);
 
 
+// home button
+
+document.getElementById('home-btn').addEventListener('click', () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+
+    const screen = document.getElementById('welcome-screen');
+    screen.style.display = 'flex';
+    screen.style.opacity = '0';
+    screen.style.transition = 'opacity 0.8s ease';
+    setTimeout(() => screen.style.opacity = '1', 10);
+});
+
+document.querySelectorAll('main > section.open').forEach(w => {
+    w.classList.remove('open');
+});
+
+
+
 // ==========================
 // MUSIC PLAYER
 // ==========================
@@ -318,7 +337,7 @@ const hoverSound3 = new Audio('assets/paper.wav');
 hoverSound3.volume = 0.4;
 
 const hoverSound4 = new Audio('assets/musicplayer.mp3');
-hoverSound4.volume = 0.67;
+hoverSound4.volume = 0.4;
 
 const hoverSound5 = new Audio('assets/bubble.mp3');
 hoverSound5.volume = 0.1;
