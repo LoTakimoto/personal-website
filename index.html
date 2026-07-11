@@ -58,7 +58,7 @@
 
             <header>
                 <h2>About me</h2>
-                <button class="btn-close" onclick="closeWin('win-about')">[x]</button>
+                <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-about')"></image>
             </header>
 
             <article>
@@ -83,6 +83,7 @@
                 </button>
 
             </article>
+            <div class="win-bottom-bar"></div>
 
         </section>
 
@@ -90,11 +91,12 @@
         <section id="win-about2">
             <header>
                 <h2>TEST</h2>
-                <button class="btn-close" onclick="closeWin('win-about2')">[x]</button>
+                <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-about2')"></image>
             </header>
             <article>
                 <p>Em breve...</p>
             </article>
+            <div class="win-bottom-bar"></div>
         </section>
 
         <!-- WINDOW: JOURNEY  -->
@@ -102,7 +104,7 @@
 
             <header>
                 <h2>My journey :l</h2>
-                <button class="btn-close" onclick="closeWin('win-journey')">[x]</button>
+                <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-journey')"></image>
             </header>
 
             <article>
@@ -114,23 +116,32 @@
                 </ul>
 
             </article>
+            <div class="win-bottom-bar"></div>
 
         </section>
 
         <!-- WINDOW: SOCIALS  -->
+
         <section id="win-socials">
 
             <header>
-                <h2>Socials & Contact</h2>
-                <button class="btn-close" onclick="closeWin('win-socials')">[x]</button>
+                <h2>Socials</h2>
             </header>
 
-            <nav>
-                <a class="social-btn" href="#">Github</a>
-                <a class="social-btn" href="#">Discord</a>
-                <a class="social-btn" href="#">Instagram</a>
-            </nav>
+            <div id="socials-container">
+                <img id="socials-close" src="assets/closebutton.png" onclick="closeWin('win-socials')">
+                <div id="socials-drag-area"></div>
+                
+                <img src="assets/pagesocials.png" id="socials-bg">
 
+                <a href="https://github.com/LoTakimoto" target="_blank" id="social-github" onmouseenter="document.getElementById('socials-bg').src='assets/github.png'" onmouseleave="document.getElementById('socials-bg').src ='assets/pagesocials.png'"></a>
+
+                <a href="https://instagram.com/lo.tkm" target ="_blank" id="social-instagram" onmouseenter="document.getElementById('socials-bg').src ='assets/instagram.png'" onmouseleave="document.getElementById('socials-bg').src ='assets/pagesocials.png'"></a>
+
+                <a href="https://discord.com/users/lo.tkm" target="_blank" id="social-discord" onmouseenter="document.getElementById('socials-bg').src ='assets/discord.png'" onmouseleave="document.getElementById('socials-bg').src ='assets/pagesocials.png'"></a>
+            </div>
+
+            <div class="win-bottom-bar"></div>
         </section>
 
         <!-- WINDOW: PROJECTS -->
@@ -138,7 +149,7 @@
             
             <header>
                 <h2>Projects</h2>
-                <button class="btn-close" onclick="closeWin('win-projects')">[x]</button>
+                <img class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-projects')"></image>
             </header>
 
             <article>
@@ -233,12 +244,13 @@
     <section id="win-settings">
         <header>
             <h2>Settings</h2>
-            <button class="btn-close" onclick="closeWin('win-settings')">[x]</button>
+            <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-settings')"></image>
         </header>
 
         <article>
             <p>Em breve...</p>
         </article>
+        <div class="win-bottom-bar"></div>
     </section>
 
     </main>

@@ -60,10 +60,10 @@ function bringToFront(win) {
 // WINDOW DRAG
 // ==========================
 document.querySelectorAll('main > section').forEach(win => {
-    const header = win.querySelector('header');
-    if (!header) return;
+    const dragArea = win.querySelector('#socials-drag-area') || win.querySelector('header');
+    if (!dragArea) return;
 
-    header.addEventListener('mousedown', function (e) {
+    dragArea.addEventListener('mousedown', function (e) {
         bringToFront(win);
 
         const rect = win.getBoundingClientRect();
@@ -405,8 +405,11 @@ welcomeEnter.addEventListener('click', () => {
 
 let isMuted = false;
 
+const hoverSocials = new Audio('assets/socialshover.mp3');
+hoverSocials.volume = 0.3;
+
 const allSounds = [ 
-    clickSound, hoverSound1, hoverSound2, hoverSound3, hoverSound4, hoverSound5, welcomeSound
+    clickSound, hoverSound1, hoverSound2, hoverSound3, hoverSound4, hoverSound5, welcomeSound, hoverSocials
 ];
 
 document.getElementById('sound-btn').addEventListener('click', () => {
@@ -422,6 +425,18 @@ document.getElementById('sound-btn').addEventListener('click', () => {
         const btn = document.getElementById('sound-btn');
         btn.classList.add('clicked');
         setTimeout(() => btn.classList.remove('clicked'), 300);
+});
+
+document.querySelectorAll('#social-github, #social-instagram, #social-discord').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        hoverSocials.currentTime = 0.01;
+        hoverSocials.play();
+    });
+
+    link.addEventListener('click', () => {
+        clickSound.currentTime = 0;
+        clickSound.play();
+    });
 });
 
 

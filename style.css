@@ -106,22 +106,34 @@ main > section {
     transform: translate(-50%, -50%); 
 
     width: 550px;
-    min-height: 350px;
-    background: white;
+    min-height: unset;
+    background: #1d263c;
     border-radius: 12px;
-    border: 1.5px solid #c8d0d8;
+    border: none;
     z-index: 10;
     box-shadow: 0 8px 32px rgba(0,0,0,0.22);
     overflow: hidden;
+    flex-direction: column;
 }
 
 main > section.open {
     display: block;
+    display: flex;
+}
+
+.win-bottom-bar {
+    background: #6b8fa8;
+    height: 44px;
+    border-radius: 0 0 12px 12px;
+    border: 3px solid #1e3a5f;
+    border-top: none;
+    margin: 0;
+    border-top: 2.5px solid #1e3a5f;
 }
 
 /* cabeçalho p segurar */
 section > header {
-    background: #3a3a3a;
+    background: #6b8fa8;
     color: white;
     padding: 10px 16px;
     border-radius: 12px 12px 0 0;
@@ -131,6 +143,9 @@ section > header {
     align-items: center;
     user-select: none;
     height: 44px;
+    border: 3px solid #1e3a5f;
+    border-bottom: none;
+    border-bottom: 2.5px solid #1e3a5f;
 }
 
 section > header h2 {
@@ -141,17 +156,14 @@ section > header h2 {
 
 /* botao fechar */
 .btn-close {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
     background: none;
     border: none;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
     padding: 0;
-
-    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-    display: inline-block;
 }
 
 .btn-close:hover {
@@ -163,7 +175,11 @@ section > article,
 section > nav {
     font-family: 'Baloo 2', sans-serif;
     padding: 24px;
-    background: white;
+    background: #1d263c;
+    flex: 1;
+    border-left: 3px solid #1e3a5f;
+    border-right: 3px solid #1e3a5f;
+    color: white;
 }
 
 /* foto redonda no about */
@@ -383,7 +399,7 @@ footer {
 
 
 .btn-link {
-    background: #2c3e50;
+    background: #1e3a5f;
     color: white;
     border: none;
     padding: 8px 14px;
@@ -394,32 +410,7 @@ footer {
 }
 
 .btn-link:hover {
-    background: #34495e;
-}
-
-#win-socials nav{
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.social-btn {
-    display: block;
-    text-decoration: none;
-    color: #2c3e50;
-    background: #f0f0f0;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.social-btn:hover {
-    background: #2c3e50;
-    color: white;
-    transform: translate(6px);
+    background: #2a4f7f;
 }
 
 #win-music {
@@ -445,6 +436,10 @@ footer {
     justify-content: flex-end;
     border-radius: 0;
     margin-bottom: -6px;
+    border: none;
+    z-index: 10;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    overflow: hidden;
 }
 
 
@@ -691,4 +686,79 @@ footer {
     animation: enter-click 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
 }
 
+
+
+/* =====================
+    socials window
+    ===================== */
+
+#win-socials {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+}
+
+#win-socials > header {
+        background: transparent;
+        border: none;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+}
+
+#win-socials .win-bottom-bar {
+    display: none;
+}
+
+#socials-drag-area {
+    position: absolute;
+    top: 0;
+    left: 52%;
+    transform: translateX(-50%);
+    width: 46%;
+    height: 12%;
+    cursor: grab;
+    z-index: 10;
+}
+
+#socials-close {
+    position: absolute;
+    top: 38px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+#socials-close:hover {
+    transform: scale(1.1);
+}
+
+#socials-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#socials-bg {
+    width: 100%;
+    display: block;
+}
+
+#social-github,
+#social-instagram,
+#social-discord {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 33.3%;
+    display: block;
+    cursor: pointer;
+}
+
+#social-github { top: 10%; }
+#social-instagram { top: 33.3%; }
+#social-discord { top:66.6%;}
 
