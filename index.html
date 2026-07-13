@@ -61,29 +61,41 @@
                 <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-about')"></image>
             </header>
 
-            <article>
-                <div class="about-top">
-                    <img src="assets/takis.jpg" class="about-photo" alt="photo" onclick="toggleWin('win-about2')">
-                </div>
+            <div class="about-body">
 
-                <p>
-                    // THIS IS A TEST //  Hi! I'm Lorena! :)
-                </p>
+                <!-- LADO ESQUERDO (PASTAS )-->
+                 <div class="about-folder" data-folder="about-me">
+                    About me 
+                    <div class="about-files">
+                        <div class="about-file" data-file="loren">loren.txt</div>
+                    </div>
+                 </div>
 
-                <p>
-                     São Paulo, Brazil
-                </p>
+                 <div class="about-folder" data-folder="skills">
+                    📁 Skills
+                    <div class="about-files">
+                        <div class="about-file" data-file="programming">programming.txt</div>
+                        <div class="about-file" data-file="olympiads">olympiads.txt</div>
+                        <div class="about-file" data-file="art.txt">art.txt</div>
+                    </div>
+                 </div>
 
-                <p>
-                    High school student - Programming [C++, Py, HTML]
-                </p>
+                 <div class="about-folder" data-folder="gallery">
+                    📁 Gallery
+                    <div class="about-files">
+                        <!-- pngs -->
+                    </div>
+                 </div>
 
-                <button class="btn-link" onclick="toggleWin('win-journey')">
-                    My journey
-                </button>
+            </div>
 
-            </article>
-            <div class="win-bottom-bar"></div>
+            <!-- Lado direito !-->
+             <div class="about-display">
+
+             </div>
+        </div>
+
+        <div class="win-bottom-bar"></div>
 
         </section>
 
@@ -263,5 +275,3 @@
 </body>
 
 </html>
-
-

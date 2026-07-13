@@ -406,7 +406,7 @@ welcomeEnter.addEventListener('click', () => {
 let isMuted = false;
 
 const hoverSocials = new Audio('assets/socialshover.mp3');
-hoverSocials.volume = 0.3;
+hoverSocials.volume = 0.1;
 
 const allSounds = [ 
     clickSound, hoverSound1, hoverSound2, hoverSound3, hoverSound4, hoverSound5, welcomeSound, hoverSocials
@@ -431,6 +431,7 @@ document.querySelectorAll('#social-github, #social-instagram, #social-discord').
     link.addEventListener('mouseenter', () => {
         hoverSocials.currentTime = 0.01;
         hoverSocials.play();
+        
     });
 
     link.addEventListener('click', () => {
@@ -438,5 +439,7 @@ document.querySelectorAll('#social-github, #social-instagram, #social-discord').
         clickSound.play();
     });
 });
+
+
 
 
