@@ -386,10 +386,6 @@ document.querySelector('.btn-link').addEventListener('click', () => {
     clickSound.play();
 });
 
-document.querySelector('.about-photo').addEventListener('click', () => {
-    clickSound.currentTime = 0;
-    clickSound.play();
-});
 
 const welcomeEnter = document.getElementById('welcome-enter');
 
@@ -439,7 +435,5 @@ document.querySelectorAll('#social-github, #social-instagram, #social-discord').
         clickSound.play();
     });
 });
-
-
 
 
