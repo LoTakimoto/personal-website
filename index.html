@@ -53,62 +53,53 @@
 
         </aside>
 
-        <!--  WINDOW: ABOUT ME  -->
-        <section id="win-about">
-
+        <!-- WINDOW: ABOUT ME -->
+        <section id="win-about" class="win-explorer">
+ 
             <header>
                 <h2>About me</h2>
                 <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-about')"></image>
             </header>
-
+ 
             <div class="about-body">
-
-                <!-- LADO ESQUERDO (PASTAS )-->
-                 <div class="about-folder" data-folder="about-me">
-                    About me 
-                    <div class="about-files">
-                        <div class="about-file" data-file="loren">loren.txt</div>
+ 
+                <!-- lado esquerdo (display) -->
+                <div class="about-sidebar">
+ 
+                    <div class="about-folder" data-folder="about-me">
+                        📁 About me
+                        <div class="about-files">
+                            <div class="about-file" data-file="loren">loren.txt</div>
+                        </div>
                     </div>
-                 </div>
-
-                 <div class="about-folder" data-folder="skills">
-                    📁 Skills
-                    <div class="about-files">
-                        <div class="about-file" data-file="programming">programming.txt</div>
-                        <div class="about-file" data-file="olympiads">olympiads.txt</div>
-                        <div class="about-file" data-file="art.txt">art.txt</div>
+ 
+                    <div class="about-folder" data-folder="skills">
+                        📁 Skills
+                        <div class="about-files">
+                            <div class="about-file" data-file="programming">programming.txt</div>
+                            <div class="about-file" data-file="olympiads">olympiads.txt</div>
+                            <div class="about-file" data-file="art">art.txt</div>
+                        </div>
                     </div>
-                 </div>
-
-                 <div class="about-folder" data-folder="gallery">
-                    📁 Gallery
-                    <div class="about-files">
-                        <!-- pngs -->
+ 
+                    <div class="about-folder" data-folder="gallery">
+                        📁 Gallery
+                        <div class="about-files">
+                            <!-- pngs-->
+                        </div>
                     </div>
-                 </div>
-
+ 
+                </div>
+ 
+                <!-- lado direito (display)--> 
+                <div class="about-display">
+ 
+                </div>
+ 
             </div>
-
-            <!-- Lado direito !-->
-             <div class="about-display">
-
-             </div>
-        </div>
-
-        <div class="win-bottom-bar"></div>
-
-        </section>
-
-        <!-- WINDOW: ABOUT ME 2 (opens on photo click) -->
-        <section id="win-about2">
-            <header>
-                <h2>TEST</h2>
-                <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-about2')"></image>
-            </header>
-            <article>
-                <p>Em breve...</p>
-            </article>
+ 
             <div class="win-bottom-bar"></div>
+ 
         </section>
 
         <!-- WINDOW: JOURNEY  -->

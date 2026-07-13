@@ -87,13 +87,6 @@ aside button:hover img {
     animation: brilho-pulse 1.55s ease-in-out infinite;
 }
 
-#icon-about img{
-    content: url(assets/about.png);
-}
-
-#icon-about:hover img{
-    content: url(assets/abouthover.png);
-}
 
 
 /* JANELAS */
@@ -180,25 +173,6 @@ section > nav {
     border-left: 3px solid #1e3a5f;
     border-right: 3px solid #1e3a5f;
     color: white;
-}
-
-/* foto redonda no about */
-.about-top {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.about-photo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
 }
 
 /* taskbar */
@@ -762,3 +736,68 @@ footer {
 #social-instagram { top: 33.3%; }
 #social-discord { top:66.6%;}
 
+/* ====================
+ ABOUT ME - file explorerw
+================*/
+
+#win-about {
+    width: 700px;
+    height: 480px;
+}
+
+.about-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* lado esquerdo */
+.about-sidebar {
+    width: 200px;
+    background: #16213a;
+    border-right: 3px solid #1e3a5f;
+    padding: 12px 0;
+    overflow-y: auto;
+}
+
+.about-folder {
+    padding: 10px 16px;
+    color: white;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+} 
+
+
+.about-files {
+    display: none;
+    flex-direction: column;
+    margin-top: 6px;
+    padding-left: 12px;
+}
+
+.about-file {
+    padding: 6px 8px;
+    color: #c9d3e0;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.15s ease;
+}
+
+.about-file:hover {
+    background: #2a3b5c;
+    color: white;
+}
+
+/* lado direito */
+.about-display {
+    flex: 1;
+    padding: 20px;
+    color: white;
+    font-family: 'Baloo 2', sans-serif;
+    overflow-y: auto;
+}
