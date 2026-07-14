@@ -437,6 +437,8 @@ document.querySelectorAll('#social-github, #social-instagram, #social-discord').
 });
 
 
+const aboutDisplay = document.querySelector('about-display');
+
 // ===============
 // about me - folder expand
 // ===============
@@ -444,6 +446,7 @@ document.querySelectorAll('#social-github, #social-instagram, #social-discord').
 document.querySelectorAll('.about-folder').forEach(folder => {
     folder.addEventListener('click', () => {
         const filesList = folder.querySelector('.about-files');
+        const folderKey = folder.dataset.folder;
 
         // fecha as outras pastas abertas antes de abrir essa
         document.querySelectorAll('.about-files').forEach(list => {
@@ -498,7 +501,7 @@ function openAboutFile(folderKey, fileKey) {
         content.appendChild(p);
     }
 
-    if (file.type === 'text') {
+    if (file.type === 'image') {
         const img = document.createElement('img');
         img.src = file.src;
         content.appendChild(img);
