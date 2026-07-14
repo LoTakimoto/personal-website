@@ -481,3 +481,54 @@ function renderFolderInDisplay(folderKey) {
     });
 }
 
+// abrir arquivo no FILE VIEWER
+
+function openAboutFile(folderKey, fileKey) {
+    const file = aboutData[folderKey].files[fileKey];
+    if (!file) return;
+
+    document.getElementById('file-viewer-title').textContent = file.title;
+
+    const content = document.getElementById('file-viewer-content');
+    content.innerHTML = '';
+
+    if (file.type === 'text') {
+        const p = document.createElement('p');
+        p.textContent = file.content;
+        content.appendChild(p);
+    }
+
+    if (file.type === 'text') {
+        const img = document.createElement('img');
+        img.src = file.src;
+        content.appendChild(img);
+    }
+
+    toggleWin('win-file-viewer');
+}
+
+// clique nos arquivos da SIDEBAR (esquerda)
+
+document.querySelectorAll('.about-file').forEach(fileEl => {
+    fileEl.addEventListener('click', (e) => {
+        e.stopPropagation(); // !!!! impede o clique de "borbulhar" pra pasta 
+
+        const folderKey = fileEl.closest('.about-folder').dataset.folder;
+        const fileKey = fileEl.dataset.file;
+
+        openAboutFile(folderKey, fileKey);
+    });
+});
+
+// clique nos arquivos do DISPLAY (lado direito)
+aboutDisplay.addEventListener('click', (e) => {
+    const fileEl = e.target.closest('.display-file');
+    if (!fileEl) return;
+
+    const folderKey = document.querySelector('.about-files[style*="flex"]')
+        .closest('.about-folder').dataset.folder;
+    const fileKey = fileEl.dataset.file;
+
+    openAboutFile(folderKey, fileKey);
+});
+
