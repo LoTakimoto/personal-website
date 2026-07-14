@@ -437,3 +437,47 @@ document.querySelectorAll('#social-github, #social-instagram, #social-discord').
 });
 
 
+// ===============
+// about me - folder expand
+// ===============
+
+document.querySelectorAll('.about-folder').forEach(folder => {
+    folder.addEventListener('click', () => {
+        const filesList = folder.querySelector('.about-files');
+
+        // fecha as outras pastas abertas antes de abrir essa
+        document.querySelectorAll('.about-files').forEach(list => {
+            if (list !== filesList) {
+                list.style.display = 'none';
+            }
+        });
+
+        // alterna a pasta clicada (abre se tava fechada, fecha se estava aberta)
+        const isOpen = filesList.style.display === 'flex';
+        filesList.style.display = isOpen ? 'none' : 'flex';
+
+        // abriu -> mostra os arquivos no display
+        if (!isOpen) {
+            renderFolderInDisplay(folderKey);
+        } else {
+            aboutDisplay.innerHTML = '';
+        }
+    });
+});
+
+function renderFolderInDisplay(folderKey) {
+    const folder = aboutData[folderKey];
+    aboutDisplay.innerHTML = '';
+
+    Object.keys(folder.files).forEach(fileKey => {
+        const file = folder.files[fileKey];
+
+        const item = document.createElement('div');
+        item.classList.add('display-file');
+        item.dataset.file = fileKey;
+        item.textContent = file.title;
+
+        aboutDisplay.appendChild(item);
+    });
+}
+

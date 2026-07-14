@@ -820,3 +820,17 @@ footer {
     white-space: pre-line;
     line-height: 1.5;
 }
+
+.display-file {
+    padding: 8px 12px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer; 
+    border-radius: 6px;
+    transition: background 0.15s ease;
+
+}
+
+.display-file:hover {
+    background: #2a3b5c;
+}
