@@ -381,11 +381,6 @@ document.querySelectorAll('aside button').forEach(btn => {
     });
 });
 
-document.querySelector('.btn-link').addEventListener('click', () => {
-    clickSound.currentTime = 0;
-    clickSound.play();
-});
-
 
 const welcomeEnter = document.getElementById('welcome-enter');
 
@@ -437,7 +432,60 @@ document.querySelectorAll('#social-github, #social-instagram, #social-discord').
 });
 
 
-const aboutDisplay = document.querySelector('about-display');
+const aboutData = {
+    'about-me': {
+        type: 'folder',
+        files: {
+            'loren': {
+                type: 'text',
+                title: 'loren.txt',
+                content: `Hi, I'm Lorena — but call me Loren. :)
+
+
+
+I'm a 16-year-old high school student from São Paulo, Brazil, and come from a Japanese family!
+
+
+
+I love expressing myself through music, photography, and cinematography, while my curiosity constantly draws me toward STEM—especially astronomy and computer science.
+
+
+
+If you'd like to know more about me, feel free to explore the pages on the left.`
+            }
+        }
+    },
+    'skills': {
+        type: 'folder',
+        files: {
+            'programming': {
+                type: 'text',
+                title: 'programming.txt',
+                content: `C++, Python, HTML/CSS/JS`
+            },
+            'olympiads': { 
+                type: 'text',
+                title: 'olympiads.txt',
+                content: `Started with programming olympiads, then joined a robotics team etc etc etc.. (this is a test)`
+            },
+            'art': {
+                type: 'text',
+                title: 'art.txt',
+                content: `test test test`
+            }
+        }
+    },
+    'gallery': {
+        type: 'folder',
+        files: {
+            // pngs
+        }
+    }
+};
+
+
+
+const aboutDisplay = document.querySelector('.about-display');
 
 // ===============
 // about me - folder expand
