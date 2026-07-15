@@ -75,7 +75,7 @@ function bringToFront(win) {
 // ==========================
 // WINDOW DRAG
 // ==========================
-document.querySelectorAll('main > section').forEach(win => {
+function makeDraggable(win) {
     const dragArea = win.querySelector('#socials-drag-area') || win.querySelector('header');
     if (!dragArea) return;
 
@@ -91,7 +91,7 @@ document.querySelectorAll('main > section').forEach(win => {
         const startY = e.clientY - rect.top;
 
         function onMouseMove(e) {
-            win.dataset.dragged = 'true'; //marca como arrastada ao mover
+            win.dataset.dragged = 'true';
 
             const maxY = window.innerHeight - win.offsetHeight;
             const maxX = window.innerWidth - win.offsetWidth;
@@ -116,7 +116,17 @@ document.querySelectorAll('main > section').forEach(win => {
     });
 
     win.addEventListener('mousedown', () => bringToFront(win));
-});
+}
+
+
+// aplica o drag em todas as janelas que ja existem no HTML
+document.querySelectorAll('main > section').forEach(makeDraggable); 
+
+
+
+
+
+
 
 // ==========================
 // TASKBAR 
