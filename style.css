@@ -799,8 +799,9 @@ footer {
     justify-content: center;
     gap: 4px;
     width: 64px;
+    padding: 6px;
     cursor: pointer;
-    transition: transform 0.15s ease;
+    transition: background 0.15s ease, transform 0.15s ease;
 }
 
 .display-file .file-icon {
@@ -815,9 +816,11 @@ footer {
     line-height: 1.2;
 }
 
-.about-file:hover {
-    transform: translateY(-3px);
+.display-file:hover {
+    background: rgba(107, 143, 168, 0.25);
+    transform: translateY(-1px);
 }
+
 
 
 

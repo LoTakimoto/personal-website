@@ -23,6 +23,22 @@ function toggleWin(id) {
         return;
     }
 
+
+    // ABOUT ME CENTERED
+    if (id === 'win-about') {
+        bringToFront(win);
+        win.style.top = '44%';
+        win.style.left = '50%';
+        win.style.right = '50%';
+        win.style.transform = 'translate(-50%, -50%)';
+        return;
+    }
+
+
+
+
+
+
     // CASCADE LOGIC 
     let maxIndex = -1;
     document.querySelectorAll('main > section.open').forEach(w => {
@@ -438,20 +454,13 @@ const aboutData = {
         files: {
             'loren': {
                 type: 'text',
-                title: 'loren.txt',
-                content: `Hi, I'm Lorena — but call me Loren. :)
-
-
-
-I'm a 16-year-old high school student from São Paulo, Brazil, and come from a Japanese family!
-
-
-
-I love expressing myself through music, photography, and cinematography, while my curiosity constantly draws me toward STEM—especially astronomy and computer science.
-
-
-
-If you'd like to know more about me, feel free to explore the pages on the left.`
+                title: 'loren.txt', 
+                content: `Hi, I'm Lorena - but call me Loren!
+                I'm a 16 year old high school student from São Paulo, Brazil, and I am japanese-brazilian :)
+                
+                I love expressing myself through music, photography and cinematography, while my curiosity constantly draws me toward STEM - especially astronomy and computer science!
+                
+                If you'd like to know more about me, feel free to explore the pages on the left!`
             }
         }
     },
