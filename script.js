@@ -526,7 +526,10 @@ function renderFolderInDisplay(folderKey) {
         const item = document.createElement('div');
         item.classList.add('display-file');
         item.dataset.file = fileKey;
-        item.textContent = file.title;
+        item.innerHTML = `
+            <span class="file-icon">📄</span>
+            <span class="file-name">${file.title}</span>
+        `;
 
         aboutDisplay.appendChild(item);
     });

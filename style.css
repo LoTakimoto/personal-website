@@ -737,7 +737,7 @@ footer {
 #social-discord { top:66.6%;}
 
 /* ====================
- ABOUT ME - file explorerw
+ ABOUT ME - file explorer
 ================*/
 
 #win-about {
@@ -774,24 +774,52 @@ footer {
 .about-files {
     display: none;
     flex-direction: column;
+    gap: 4px;
     margin-top: 6px;
     padding-left: 12px;
 }
 
 .about-file {
-    padding: 6px 8px;
-    color: #c9d3e0;
-    font-size: 13px;
-    font-weight: 400;
+    color: white;
+    font-size: 12px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background 0.15s ease;
+    padding: 4px 0;
+    transition: opacity 0.15 ease;
 }
 
 .about-file:hover {
-    background: #2a3b5c;
-    color: white;
+    opacity: 0.7;
 }
+
+/* ARQUIVOS!!! */
+.display-file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 64px;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.display-file .file-icon {
+    font-size: 28px;
+}
+
+.display-file .file-name {
+    font-size: 11px;
+    color: white;
+    text-align: center;
+    word-break: break-word;
+    line-height: 1.2;
+}
+
+.about-file:hover {
+    transform: translateY(-3px);
+}
+
+
 
 /* lado direito */
 .about-display {
@@ -800,6 +828,10 @@ footer {
     color: white;
     font-family: 'Baloo 2', sans-serif;
     overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-content: flex-start;
 }
 
 /* ==================
@@ -819,18 +851,4 @@ footer {
 #file-viewer-content p {
     white-space: pre-line;
     line-height: 1.5;
-}
-
-.display-file {
-    padding: 8px 12px;
-    color: white;
-    font-size: 14px;
-    cursor: pointer; 
-    border-radius: 6px;
-    transition: background 0.15s ease;
-
-}
-
-.display-file:hover {
-    background: #2a3b5c;
 }
