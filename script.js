@@ -560,24 +560,46 @@ function openAboutFile(folderKey, fileKey) {
     const file = aboutData[folderKey].files[fileKey];
     if (!file) return;
 
-    document.getElementById('file-viewer-title').textContent = file.title;
+    const winId = `win-file-${folderKey}-${fileKey}`;
+    let win = document.getElementById(winId);
 
-    const content = document.getElementById('file-viewer-content');
-    content.innerHTML = '';
+    if (!win) {
+        const template = document.getElementById('win-file-viewer');
+        win = template.cloneNode(true);
+        win.id = winId;
 
-    if (file.type === 'text') {
-        const p = document.createElement('p');
-        p.textContent = file.content;
-        content.appendChild(p);
+        // title
+        const title = win.querySelector('h2');
+        title.removeAttribute('id');
+        title.textContent = file.title;
+
+        // close button
+        const closeBtn = win.querySelector('.btn-close');
+        closeBtn.setAttribute('onclick', `closeWin('${winId}')`);
+
+        //content
+        const content = win.querySelector('article');
+        content.removeAttribute('id');
+        content.innerHTML = '';
+
+        if (file.type === 'text') {
+            const p = document.createElement('p');
+            p.textContent = file.content;
+            content.appendChild(p);
+        }
+
+        if (file.type === 'image') {
+            const img = document.createElement('img');
+            img.src = file.src;
+            content.appendChild(img);
+        }
+
+        document.querySelector('main').appendChild(win);
+        makeDraggable(win);
     }
 
-    if (file.type === 'image') {
-        const img = document.createElement('img');
-        img.src = file.src;
-        content.appendChild(img);
-    }
+    toggleWin(winId);
 
-    toggleWin('win-file-viewer');
 }
 
 // clique nos arquivos da SIDEBAR (esquerda)
