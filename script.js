@@ -34,11 +34,6 @@ function toggleWin(id) {
         return;
     }
 
-
-
-
-
-
     // CASCADE LOGIC 
     let maxIndex = -1;
     document.querySelectorAll('main > section.open').forEach(w => {
@@ -65,7 +60,7 @@ function closeWin(id) {
 }
 
 // ==========================
-// WINDOW Z-INDEX (BRING THE WINDOW TO THE FRONT)
+// WINDOW Z-INDEX 
 // ==========================
 let zCounter = 10;
 function bringToFront(win) {
@@ -337,9 +332,9 @@ updateWelcomeClock();
 setInterval(updateWelcomeClock, 1000);
 
 // ==========================
-// SOUND EFFECTS — CLIQUE
+// SOUND EFFECTS 
 // ==========================
-const clickSound = new Audio('assets/click.mp3');
+const clickSound = new Audio('assets/click2.mp3');
 clickSound.volume = 0.3;
 
 document.querySelectorAll('aside button').forEach(btn => {
@@ -350,8 +345,9 @@ document.querySelectorAll('aside button').forEach(btn => {
     });
 });
 
+
 // ==========================
-// SOUND EFFECTS — HOVER (todos os sons juntos, um só listener)
+// SOUND EFFECTS — HOVER
 // ==========================
 const hoverSound1 = new Audio('assets/hover1.mp3');
 hoverSound1.volume = 0.6;
@@ -512,6 +508,8 @@ const aboutDisplay = document.querySelector('.about-display');
 
 document.querySelectorAll('.about-folder').forEach(folder => {
     folder.addEventListener('click', () => {
+        clickSound.currentTime = 0;
+        clickSound.play();
         const filesList = folder.querySelector('.about-files');
         const folderKey = folder.dataset.folder;
 
@@ -608,8 +606,12 @@ document.querySelectorAll('.about-file').forEach(fileEl => {
     fileEl.addEventListener('click', (e) => {
         e.stopPropagation(); // !!!! impede o clique de "borbulhar" pra pasta 
 
+        clickSound.currentTime = 0;
+        clickSound.play();
+
         const folderKey = fileEl.closest('.about-folder').dataset.folder;
         const fileKey = fileEl.dataset.file;
+
 
         openAboutFile(folderKey, fileKey);
     });
@@ -624,6 +626,11 @@ aboutDisplay.addEventListener('click', (e) => {
         .closest('.about-folder').dataset.folder;
     const fileKey = fileEl.dataset.file;
 
-    openAboutFile(folderKey, fileKey);
+    document.body.classList.add('loading-file');
+
+    setTimeout(() => {
+        document.body.classList.remove('loading-file');
+        openAboutFile(folderKey, fileKey);
+    }, 450);
 });
 

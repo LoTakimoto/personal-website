@@ -821,9 +821,6 @@ footer {
     transform: translateY(-1px);
 }
 
-
-
-
 /* lado direito */
 .about-display {
     flex: 1;
@@ -854,4 +851,9 @@ footer {
 #file-viewer-content p {
     white-space: pre-line;
     line-height: 1.5;
+}
+
+body.loading-file .display-file,
+body.loading-file * {
+    cursor: wait !important;
 }
