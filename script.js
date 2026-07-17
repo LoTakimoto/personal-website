@@ -34,6 +34,37 @@ function toggleWin(id) {
         return;
     }
 
+    // files open on diagonal :)
+
+    if (id.startsWith('win-file-')) {
+        const aboutWin = document.getElementById('win-about');
+        const aboutRect = aboutWin.getBoundingClientRect();
+
+        let maxIndex = -1;
+        document.querySelectorAll('[id^="win-file-"].open').forEach(w => {
+            if (w !== win && w.dataset.dragged !== 'true') {
+                const idx = parseInt(w.dataset.cascadeIndex ?? '-1');
+                if (idx > maxIndex) maxIndex = idx;
+            }
+        });
+
+        const newIndex = maxIndex + 1;
+        win.dataset.cascadeIndex = newIndex;
+
+        const offset = (newIndex % 6) * 30;
+
+        win.style.top = (aboutRect.top + aboutRect.height * 0.3 + offset) + 'px';
+        win.style.left = (aboutRect.left + aboutRect.width * 0.55 + offset) + 'px';
+        win.style.transform = 'none';
+
+        bringToFront(win);
+        return;
+        
+    }
+
+
+
+
     // CASCADE LOGIC 
     let maxIndex = -1;
     document.querySelectorAll('main > section.open').forEach(w => {
