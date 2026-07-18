@@ -838,22 +838,32 @@ footer {
     file viewer
     =================*/
 
-#win-file-viewer {
-    width: 420px;
-}
-
-#file-viewer-content img {
-    max-width: 100%;
-    border-radius: 8px;
-    display: block;
-}
-
-#file-viewer-content p {
-    white-space: pre-line;
-    line-height: 1.5;
-}
 
 body.loading-file .display-file,
 body.loading-file * {
     cursor: wait !important;
 }
+
+.highlight {
+    color: #aed2fc;
+}
+
+.file-viewer-window {
+    width: 420px;
+    height: 430px;
+}
+
+.file-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.file-content p {
+    white-space: pre-line;
+    line-height: 1.5;
+    font-weight: 550;
+}
+
+
+

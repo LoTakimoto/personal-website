@@ -53,8 +53,8 @@ function toggleWin(id) {
 
         const offset = (newIndex % 6) * 30;
 
-        win.style.top = (aboutRect.top + aboutRect.height * 0.3 + offset) + 'px';
-        win.style.left = (aboutRect.left + aboutRect.width * 0.55 + offset) + 'px';
+        win.style.top = (aboutRect.top + aboutRect.height * 0.13 + offset) + 'px';
+        win.style.left = (aboutRect.left + aboutRect.width * 0.47 + offset) + 'px';
         win.style.transform = 'none';
 
         bringToFront(win);
@@ -492,12 +492,11 @@ const aboutData = {
             'loren': {
                 type: 'text',
                 title: 'loren.txt', 
-                content: `Hi, I'm Lorena - but call me Loren!
-                I'm a 16 year old high school student from São Paulo, Brazil, and I am japanese-brazilian :)
+                content: `❔ Hi, I'm <span class="highlight">Lorena</span> - but call me <span class="highlight">Loren</span>! I'm a 16 year old high school student from <span class="highlight">São Paulo</span>, <span class="highlight">Brazil</span>, and I am japanese-brazilian :)
                 
-                I love expressing myself through music, photography and cinematography, while my curiosity constantly draws me toward STEM - especially astronomy and computer science!
+                I love expressing myself through <span class="highlight">music</span>, <span class="highlight">photography</span> and <span class="highlight">cinematography</span>, while my curiosity constantly draws me toward <span class="highlight">STEM</span> - especially <span class="highlight">astronomy</span> and <span class="highlight">computer science</span>‼️ 
                 
-                If you'd like to know more about me, feel free to explore the pages on the left!`
+                🌟 If you'd like to know more about me, feel free to explore the pages on the left!`
             }
         }
     },
@@ -613,7 +612,7 @@ function openAboutFile(folderKey, fileKey) {
 
         if (file.type === 'text') {
             const p = document.createElement('p');
-            p.textContent = file.content;
+            p.innerHTML = file.content;
             content.appendChild(p);
         }
 
@@ -662,6 +661,6 @@ aboutDisplay.addEventListener('click', (e) => {
     setTimeout(() => {
         document.body.classList.remove('loading-file');
         openAboutFile(folderKey, fileKey);
-    }, 450);
+    }, 250);
 });
 
