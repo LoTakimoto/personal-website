@@ -506,12 +506,23 @@ const aboutData = {
             'programming': {
                 type: 'text',
                 title: 'programming.txt',
-                content: `C++, Python, HTML/CSS/JS`
+                content: `💫 My <span class="highlight">strongest</span> programming language is <span class="highlight">C++</span> 
+                Which I mainly use for <span class="highligh">competitive programming</span> and algorithmic <span class="highlight">problem solving</span>, especially while participating in the <span class="highlight">Brazilian Olympiad in Informatics</span> (OBI).
+                
+                > I use <span class="highlight">Python</span> for general purpose projects and scripting
+                
+                and I'm also diving deeper into <span class="highlight">HTML/CSS/JavaScript</span> to build my first <span class="highlight">personal website</span>! 💻`
             },
             'olympiads': { 
                 type: 'text',
                 title: 'olympiads.txt',
-                content: `Started with programming olympiads, then joined a robotics team etc etc etc.. (this is a test)`
+                content: `- I've always loved<span class="highlight"> learning</span> and <span class="highlight">challenging</span> myself...
+
+                Over the years, that passion has <span class="highlight">led me</span> to earn more than a dozen <span class="highlight">national medals</span> in academic <span class="highlight">Olympiads</span>, including astronomy, robotics and mathematics!
+
+                These experiences have played an important <span class="highlight">role</span> in shaping <span class="highlight">who I am</span> 
+
+                🥇 While my <span class="highlight">interests</span> now extend <span class="highlight">beyond</span> olympiads, they remain one of my <span class="highlight">proudest achievements</span> :)`
             },
             'art': {
                 type: 'text',
