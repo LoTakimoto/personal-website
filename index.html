@@ -10,6 +10,15 @@
 <body>
     <!-- WELCOME SCREEN -->
     <div id="welcome-screen">
+        <img src="assets/timezone.png" id="welcome-timezone-icon" alt="timezone icon" onclick="toggleTimezonePanel()">
+
+        <div id="timezone-panel">
+            <header>
+                <h2>Timezone</h2>
+                <img class="btn-close" src="assets/closebutton.png" onclick="toggleTimezonePanel()">
+            </header>
+        </div>
+
         <div id="welcome-card">
             <img src="assets/welcome1.png" id="welcome-bg" alt="welcome card">
             <img src="assets/enter.png" id="welcome-enter" onclick="enterSite()">

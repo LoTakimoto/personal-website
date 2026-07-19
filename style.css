@@ -678,6 +678,53 @@ footer {
     animation: enter-click 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
 }
 
+#welcome-timezone-icon {
+    position: absolute;
+    bottom: 24px;
+    left: 25px;
+    width: 60px;
+    height: auto;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#welcome-timezone-icon:hover {
+    transform: scale(1.05);
+}
+
+#timezone-panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100%;
+    background: white;
+    border-right: 6px solid #2c3e50;
+    z-index: 999999;
+    transform: translateX(-100%);
+    transition: transform 0.35s ease;
+}
+
+#timezone-panel.open {
+    transform: translateX(0);
+}
+
+#timezone-panel header {
+    background: #6b8fa8;
+    color: white;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 6px solid #2c3e50;
+}
+
+#timezone-panel header h2 { 
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Baloo 2', sans-serif;
+}
 
 
 /* =====================

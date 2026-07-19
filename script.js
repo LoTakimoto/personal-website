@@ -350,7 +350,7 @@ function enterSite() {
         screen.style.opacity = '0';
         setTimeout(() => screen.style.display = 'none', 1000);
     }, 450);
-}
+} 
 
 function updateWelcomeClock() {
     const now = new Date();
@@ -366,6 +366,11 @@ function updateWelcomeClock() {
 }
 updateWelcomeClock();
 setInterval(updateWelcomeClock, 1000);
+
+function toggleTimezonePanel() {
+    const panel = document.getElementById('timezone-panel');
+    panel.classList.toggle('open');
+}
 
 // ==========================
 // SOUND EFFECTS 
