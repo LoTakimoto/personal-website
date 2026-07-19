@@ -552,6 +552,10 @@ footer {
     content: url('assets/socials2.png');
 }
 
+#icon-about:hover img {
+    content: url('assets/abouthover.png');
+}
+
 #welcome-screen {
     font-family: 'Baloo 2', sans-serif;
     position: fixed;
@@ -620,7 +624,7 @@ footer {
 
 #welcome-clock {
     position: absolute;
-    top: 26%;
+    top: 25%;
     text-align: center;
     color: #2c3e50;
     font-family: 'Baloo 2', sans-serif;
@@ -630,6 +634,20 @@ footer {
     font-size: 64px;
     font-weight: 700;
     line-height: 1;
+}
+
+#welcome-time-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+#welcome-period {
+    position: absolute;
+    top: 8px;
+    right: -30px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c3e50;
 }
 
 #welcome-date {
@@ -735,6 +753,8 @@ footer {
 #social-github { top: 10%; }
 #social-instagram { top: 33.3%; }
 #social-discord { top:66.6%;}
+
+
 
 /* ====================
  ABOUT ME - file explorer

@@ -354,10 +354,15 @@ function enterSite() {
 
 function updateWelcomeClock() {
     const now = new Date();
-    document.getElementById('welcome-time').textContent =
-        now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+
+    const time = now.toLocaleTimeString('en-US', { hour:'numeric', minute: '2-digit', hour12: true});
+    const [hourMinute, period] = time.split(' ');
+
+    document.getElementById('welcome-time').textContent = hourMinute;
+    document.getElementById('welcome-period').textContent = period;
+
     document.getElementById('welcome-date').textContent =
-        now.toLocaleDateString('pt-BR', { weekday: 'long', day: 'numeric', month: 'long' })
+        now.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric', month: 'long'});
 }
 updateWelcomeClock();
 setInterval(updateWelcomeClock, 1000);
