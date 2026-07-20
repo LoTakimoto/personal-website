@@ -735,6 +735,7 @@ footer {
     padding: 14px 20px;
     font-family: 'Baloo 2', sans-serif;
     font-size: 15px;
+    font-weight: 700;
     color: #2c3e50;
     cursor: pointer;
     transition: background 0.15s ease;
