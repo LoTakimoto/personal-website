@@ -726,6 +726,30 @@ footer {
     font-family: 'Baloo 2', sans-serif;
 }
 
+#timezone-list {
+    list-style: none;
+    padding: 12px 0;
+}
+
+#timezone-list li {
+    padding: 14px 20px;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 15px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+#timezone-list li:hover {
+    background: #eef2f6;
+}
+
+#timezone-list li.active {
+    background: #6b8fa8;
+    color: white;
+}
+
+
 
 /* =====================
     socials window

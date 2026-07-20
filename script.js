@@ -219,6 +219,22 @@ document.querySelectorAll('#tz-dropdown li').forEach(li => {
     });
 });
 
+// timezone select (welcome panel)
+document.querySelectorAll('#timezone-list li').forEach(li => {
+    li.addEventListener('click', () => {
+        currentTz = li.dataset.tz;
+
+        updateClock();
+        updateWelcomeClock();
+
+        document.getElementById('tz-label').textContent = li.textContent;
+        document.getElementById('tz-selector').style.right = tzPositions[currentTz];
+
+        document.querySelectorAll('#tz-dropdown li, #timezone-list li').forEach(i => i.classList.remove('active'));
+        li.classList.add('active');
+    });
+});
+
 // close when clicked outside
 document.addEventListener('click', (e) => {
     if (!document.getElementById('tz-selector').contains(e.target)) {
@@ -355,7 +371,7 @@ function enterSite() {
 function updateWelcomeClock() {
     const now = new Date();
 
-    const time = now.toLocaleTimeString('en-US', { hour:'numeric', minute: '2-digit', hour12: true});
+    const time = now.toLocaleTimeString('en-US', { hour:'numeric', minute: '2-digit', hour12: true, timeZone: currentTz });
     const [hourMinute, period] = time.split(' ');
 
     document.getElementById('welcome-time').textContent = hourMinute;
@@ -363,6 +379,9 @@ function updateWelcomeClock() {
 
     document.getElementById('welcome-date').textContent =
         now.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric', month: 'long'});
+
+    document.getElementById('welcome-date').textContent =
+        now.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric', month: 'long', timeZone: currentTz});
 }
 updateWelcomeClock();
 setInterval(updateWelcomeClock, 1000);
