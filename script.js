@@ -191,6 +191,13 @@ function updateClock() {
     document.getElementById('clock-display').textContent = time;
 }
 
+const tzNames = {
+    'America/Sao_Paulo': 'Brasília',
+    'America/Toronto': 'Toronto',
+    'Europe/London': 'London',
+    'Asia/Tokyo': 'Tokyo'
+};
+
 // open/close dropdown
 document.getElementById('tz-arrow-wrap').addEventListener('click', () => {
     const arrow = document.getElementById('tz-arrow');
@@ -371,17 +378,16 @@ function enterSite() {
 function updateWelcomeClock() {
     const now = new Date();
 
-    const time = now.toLocaleTimeString('en-US', { hour:'numeric', minute: '2-digit', hour12: true, timeZone: currentTz });
+    const time = now.toLocaleTimeString('en-US', { hour:'numeric', minute: '2-digit', hour12: true, timeZone: currentTz});
     const [hourMinute, period] = time.split(' ');
 
     document.getElementById('welcome-time').textContent = hourMinute;
     document.getElementById('welcome-period').textContent = period;
 
     document.getElementById('welcome-date').textContent =
-        now.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric', month: 'long'});
-
-    document.getElementById('welcome-date').textContent =
         now.toLocaleDateString('en-US', {weekday: 'long', day: 'numeric', month: 'long', timeZone: currentTz});
+
+    document.getElementById('welcome-tz').textContent = `> ${tzNames[currentTz]} Time`;
 }
 updateWelcomeClock();
 setInterval(updateWelcomeClock, 1000);
