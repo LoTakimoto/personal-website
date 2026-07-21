@@ -62,9 +62,6 @@ function toggleWin(id) {
         
     }
 
-
-
-
     // CASCADE LOGIC 
     let maxIndex = -1;
     document.querySelectorAll('main > section.open').forEach(w => {
@@ -148,12 +145,6 @@ function makeDraggable(win) {
 // aplica o drag em todas as janelas que ja existem no HTML
 document.querySelectorAll('main > section').forEach(makeDraggable); 
 
-
-
-
-
-
-
 // ==========================
 // TASKBAR 
 // ==========================
@@ -168,9 +159,6 @@ document.getElementById('settings-btn').addEventListener('click', () => {
     btn.classList.add('clicked');
     setTimeout(() => btn.classList.remove('clicked'), 200);
 });
-
-
-
 
 //taskbar-clock
 
@@ -311,6 +299,17 @@ audio.addEventListener('loadedmetadata', () => {
 
 seek.addEventListener('input', () => {
     audio.currentTime = seek.value;
+});
+
+function togglePlaylistPanel() {
+    const panel = document.getElementById('playlist-panel');
+    panel.classList.toggle('open');
+}
+
+document.getElementById('btn-playlist-toggle').addEventListener('click', () => {
+    clickSound.currentTime = 0;
+    clickSound.play();
+    togglePlaylistPanel();
 });
 
 // ==========================
