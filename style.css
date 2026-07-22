@@ -1044,4 +1044,58 @@ PROJECTS WINDOW
     font-weight: 600;
 }
 
+/* ---------  */
+
+.project-process {
+    background: #2f3e61;
+    padding: 16px 20px;
+    margin-top: 8px;
+}
+
+.process-label {
+    display: block;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 12px;
+    color: #d7e2ec;
+}
+
+.process-steps {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-right: 16px;
+}
+
+.process-step {
+    display: flex ;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 60px;
+}
+
+.step-icon {
+    font-size: 22px;
+}
+
+.step-text {
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    color: #cfe0ee;
+    white-space: nowrap;
+}
+
+.step-divider {
+    flex: 0 0 20px;
+    height: 2px;
+    background: #6b8fa8;
+    margin-bottom: 18px;
+}
+
+
 
