@@ -614,7 +614,13 @@ const aboutData = {
                 title: 'desk.jpg',
                 src: 'assets/desk.jpg',
                 description: `This is where I spend the most of my time. Feeling good, feeling bad, I always find myself sitting at this desk. It's my little corner of peace :)`
-            }
+            },
+            'guitar': {
+                type: 'image',
+                title: 'guitar.jpg',
+                src: 'assets/guitar.jpg', 
+                description: `This is my guitar! It's one of my favourite hobbies! (oh and there's triple T too...)`
+            } 
         }
     }
 
