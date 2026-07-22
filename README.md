@@ -39,10 +39,10 @@ Today, the website is a mix of illustration and code!
  - SKETCHBOOK
 
 ### Websites/References:
- - ![W3Schools](https://www.w3schools.com/)
- - ![FreeCodeCamp](https://www.freecodecamp.org/)
- - ![Pixabay](https://pixabay.com/) - Sound Effects
- - ![Pinterest](https://pinterest.com/) - Design refs!
+ - [W3Schools](https://www.w3schools.com/)
+ - [FreeCodeCamp](https://www.freecodecamp.org/)
+ - [Pixabay](https://pixabay.com/) - Sound Effects
+ - [Pinterest](https://pinterest.com/) - Design refs!
 
 * Special thanks to ![Lucas Honda](github.com/lucasht22) for motivating me to develop my website! 
 
