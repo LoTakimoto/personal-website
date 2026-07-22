@@ -1011,4 +1011,37 @@ body.loading-file * {
 }
 
 
+/* ===========
+PROJECTS WINDOW
+=================*/
+
+#win-projects {
+    width: 620px;
+}
+
+#win-projects article {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.project-title {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.project-divider {
+    border: none;
+    border-top: 2px dashed #6b8fa8;
+    margin: 4px 0;
+}
+
+#win-projects article p:not(.project-title) {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #d7e2ec;
+    font-weight: 600;
+}
+
 
