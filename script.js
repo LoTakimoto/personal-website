@@ -175,12 +175,15 @@ let currentTz = 'America/Sao_Paulo';
 
 function updateClock() {
     const now = new Date();
-    const time = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: currentTz });
-    document.getElementById('clock-display').textContent = time;
+    const time = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: currentTz });
+    const [hourMinute, period] = time.split(' ');
+
+    document.getElementById('clock-display').textContent = hourMinute;
+    document.getElementById('clock-period').textContent = period;
 }
 
 const tzNames = {
-    'America/Sao_Paulo': 'Brasília',
+    'America/Sao_Paulo': 'São Paulo',
     'America/Toronto': 'Toronto',
     'Europe/London': 'London',
     'Asia/Tokyo': 'Tokyo'
@@ -557,11 +560,6 @@ const aboutData = {
                 These experiences have played an important <span class="highlight">role</span> in shaping <span class="highlight">who I am</span> 
 
                 🥇 While my <span class="highlight">interests</span> now extend <span class="highlight">beyond</span> olympiads, they remain one of my <span class="highlight">proudest achievements</span> :)`
-            },
-            'art': {
-                type: 'text',
-                title: 'art.txt',
-                content: `test test test`
             }
         }
     },

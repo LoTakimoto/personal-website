@@ -995,5 +995,20 @@ body.loading-file * {
     font-weight: 530;
 }
 
+#clock-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+#clock-period {
+    position: absolute;
+    top: 3px;
+    right: -20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2c3e50;
+    font-family: "Baloo 2", sans-serif;
+}
+
 
 

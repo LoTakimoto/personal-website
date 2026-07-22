@@ -97,7 +97,6 @@
                         <div class="about-files">
                             <div class="about-file" data-file="programming">programming.txt</div>
                             <div class="about-file" data-file="olympiads">olympiads.txt</div>
-                            <div class="about-file" data-file="art">art.txt</div>
                         </div>
                     </div>
  
@@ -266,7 +265,10 @@
 
         <img src="assets/settings.png" id="settings-btn" onclick="toggleWin('win-settings')">
 
-        <p id="clock-display">00:00</p>
+        <div id="clock-wrap">
+            <p id="clock-display">00:00</p>
+            <span id="clock-period"></span>
+        </div>
 
        <div id="tz-selector">
           <span id="tz-label">São Paulo (UTC-3:00)</span>
