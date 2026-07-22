@@ -4,6 +4,8 @@
 
 <img src="assets/websitesc.png">
 
+---
+
 # My Personal Website yippiee
 
 This is the first website I've ever built, and honestly, It's the project that made me truly fall in love with web development!!
@@ -14,12 +16,16 @@ I learned a lot, but never really invested myself into creating something that a
 
 Seeing my ideas come to life feels completely different :)
 
+---
+
 ## ABOUT THE PROJECT
 
 Instead of a traditional portfolio, I wanted to build something that represents who I am.
 The website is designed as a cartoon inspired computer workspace, where every app opens a different part of my world. 
 
 Rather than scrolling through a boring page, visitors can explore It like they're using my own desktop.
+
+---
 
 ## DESIGN
 
@@ -28,6 +34,8 @@ When I started this project, most of the visual elements were hand-drawn. Icons,
 As the project grew, I slowly began replacing those assets with pure CSS -> which allowed the website to have better responsiveness, and much cleaner codebase.
 
 Today, the website is a mix of illustration and code!
+
+---
 
 ## Built using:
 
