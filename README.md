@@ -44,5 +44,5 @@ Today, the website is a mix of illustration and code!
  - [Pixabay](https://pixabay.com/) - Sound Effects
  - [Pinterest](https://pinterest.com/) - Design refs!
 
-* Special thanks to ![Lucas Honda](github.com/lucasht22) for motivating me to develop my website! 
+* Special thanks to [Lucas Honda](github.com/lucasht22) for motivating me to develop my website! 
 
