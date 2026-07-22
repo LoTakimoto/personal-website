@@ -10,7 +10,7 @@
 body {
     font-family: 'Nunito', sans-serif;
     background: #1a5276;
-    background-image: url('assets/green.png');
+    background-image: url('./assets/green.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -180,7 +180,7 @@ footer {
     left: 0;
     right: 0;
     height: 80px;
-    background: url('assets/bar.png');
+    background: url('./assets/bar.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     display: flex;
@@ -570,23 +570,23 @@ footer {
 /* app icons */
 
 #icon-projects img {
-    content: url('assets/projects2.png');
+    content: url('./assets/projects2.png');
 }
 
 #icon-projects:hover img{
-    content: url('assets/projecthover3.png');
+    content: url('./assets/projecthover3.png');
 }
 
 #icon-socials img{
-    content: url('assets/socials1.png');
+    content: url('./assets/socials1.png');
 }
 
 #icon-socials:hover img{
-    content: url('assets/socials2.png');
+    content: url('./assets/socials2.png');
 }
 
 #icon-about:hover img {
-    content: url('assets/abouthover.png');
+    content: url('./assets/abouthover.png');
 }
 
 /* Welcome screen */
@@ -598,7 +598,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('assets/green.png');
+    background: url('./assets/green.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -615,7 +615,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('assets/green.png');
+    background-image: url('./assets/green.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
