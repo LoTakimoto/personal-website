@@ -1,5 +1,6 @@
 
 > NOTE: This project used AI for improvement suggestions and quick fixes!
+---
 
 <img src="assets/websitesc.png">
 
