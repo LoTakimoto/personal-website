@@ -10,12 +10,12 @@
 <body>
     <!-- WELCOME SCREEN -->
     <div id="welcome-screen">
-        <img src="assets/timezone.png" id="welcome-timezone-icon" alt="timezone icon" onclick="toggleTimezonePanel()">
+        <img src="/assets/timezone.png" id="welcome-timezone-icon" alt="timezone icon" onclick="toggleTimezonePanel()">
 
         <div id="timezone-panel">
             <header>
                 <h2>Timezone</h2>
-                <img class="btn-close" src="assets/closebutton.png" onclick="toggleTimezonePanel()">
+                <img class="btn-close" src="/assets/closebutton.png" onclick="toggleTimezonePanel()">
             </header>
 
             <ul id="timezone-list">
@@ -27,8 +27,8 @@
         </div>
 
         <div id="welcome-card">
-            <img src="assets/welcome1.png" id="welcome-bg" alt="welcome card">
-            <img src="assets/enter.png" id="welcome-enter" onclick="enterSite()">
+            <img src="/assets/welcome1.png" id="welcome-bg" alt="welcome card">
+            <img src="/assets/enter.png" id="welcome-enter" onclick="enterSite()">
 
             <div id="welcome-clock">
                 <div id="welcome-time-wrap">
@@ -43,7 +43,6 @@
         </div>
     </div>
     
-    
     <!--    DESKTOP    -->
 
     <main>
@@ -53,21 +52,20 @@
 
             <div class="top-icons">                
             <button id="icon-about" onclick="toggleWin('win-about')">
-                <img src="assets/about.png" alt="About me">
+                <img src="/assets/about.png" alt="About me">
             </button>
 
             <button id="icon-music" onclick="toggleWin('win-music')">
-                <img src="assets/music1.png" alt="Music yippie">
+                <img src="/assets/music1.png" alt="Music yippie">
             </button>    
             </div>
 
-
             <button id="icon-projects" onclick="toggleWin('win-projects')">
-                <img class="img-normal" src="assets/projects2.png" alt="Projects">
+                <img class="img-normal" src="/assets/projects2.png" alt="Projects">
             </button>
 
             <button id="icon-socials" onclick="toggleWin('win-socials')">
-                <img src="assets/socials.png" alt="Socials">
+                <img src="/assets/socials.png" alt="Socials">
             </button>
 
         </aside>
@@ -77,12 +75,12 @@
  
             <header>
                 <h2>About me</h2>
-                <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-about')"></image>
+                <image class="btn-close" src="/assets/closebutton.png" onclick="closeWin('win-about')"></image>
             </header>
  
             <div class="about-body">
  
-                <!-- lado esquerdo (display) -->
+                <!-- LEFT SIDE -->
                 <div class="about-sidebar">
  
                     <div class="about-folder" data-folder="about-me">
@@ -109,7 +107,7 @@
  
                 </div>
  
-                <!-- lado direito (display)--> 
+                <!-- RIGHT SIDE (DISPLAY) --> 
                 <div class="about-display">
  
                 </div>
@@ -125,38 +123,16 @@
 
             <header>
                 <h2 id="file-viewer-title">arquivo.txt</h2>
-                <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-file-viewer')"></image>
+                <image class="btn-close" src="/assets/closebutton.png" onclick="closeWin('win-file-viewer')"></image>
             </header>
 
             <article id="file-viewer-content" class="file-content">
-                <!-- conteudo entra via JS -->
+                <!-- content enters via JS -->
             </article>
             
             <div class="win-bottom-bar"></div>
 
          </section>
-
-
-        <!-- WINDOW: JOURNEY  -->
-        <section id="win-journey">
-
-            <header>
-                <h2>My journey :l</h2>
-                <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-journey')"></image>
-            </header>
-
-            <article>
-
-                <ul>
-                    <li>Exemplo 1</li>
-                    <li>Exemplo 2</li>
-                    <li>Exemplo 3</li>
-                </ul>
-
-            </article>
-            <div class="win-bottom-bar"></div>
-
-        </section>
 
         <!-- WINDOW: SOCIALS  -->
 
@@ -167,16 +143,16 @@
             </header>
 
             <div id="socials-container">
-                <img id="socials-close" src="assets/closebutton.png" onclick="closeWin('win-socials')">
+                <img id="socials-close" src="/assets/closebutton.png" onclick="closeWin('win-socials')">
                 <div id="socials-drag-area"></div>
                 
-                <img src="assets/pagesocials.png" id="socials-bg">
+                <img src="/assets/pagesocials.png" id="socials-bg">
 
                 <a href="https://github.com/LoTakimoto" target="_blank" id="social-github" onmouseenter="document.getElementById('socials-bg').src='assets/github.png'" onmouseleave="document.getElementById('socials-bg').src ='assets/pagesocials.png'"></a>
 
                 <a href="https://instagram.com/lo.tkm" target ="_blank" id="social-instagram" onmouseenter="document.getElementById('socials-bg').src ='assets/instagram.png'" onmouseleave="document.getElementById('socials-bg').src ='assets/pagesocials.png'"></a>
 
-                <a href="https://discord.com/users/lo.tkm" target="_blank" id="social-discord" onmouseenter="document.getElementById('socials-bg').src ='assets/discord.png'" onmouseleave="document.getElementById('socials-bg').src ='assets/pagesocials.png'"></a>
+                <a target="_blank" id="social-discord" onmouseenter="document.getElementById('socials-bg').src ='assets/discord.png'" onmouseleave="document.getElementById('socials-bg').src ='assets/pagesocials.png'"></a>
             </div>
 
             <div class="win-bottom-bar"></div>
@@ -187,7 +163,7 @@
             
             <header>
                 <h2>Projects</h2>
-                <img class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-projects')"></image>
+                <img class="btn-close" src="/assets/closebutton.png" onclick="closeWin('win-projects')"></image>
             </header>
 
             <article>
@@ -248,15 +224,15 @@
             </div>
 
             <header>
-                <img src="assets/playlistbutton.png" class="music-btn" id="btn-playlist-toggle">
-                <img src="assets/infobutton.png" class="music-btn" id="btn-info">
-                <img src="assets/closebutton.png" class="music-btn" onclick="closeWin('win-music')">
+                <img src="/assets/playlistbutton.png" class="music-btn" id="btn-playlist-toggle">
+                <img src="/assets/infobutton.png" class="music-btn" id="btn-info">
+                <img src="/assets/closebutton.png" class="music-btn" onclick="closeWin('win-music')">
             </header>
 
             <article class="player">
 
                 <div class="player-cover">
-                    <img src="assets/snoopy.jpg">
+                    <img src="/assets/snoopy.jpg">
                     <!--https://i.scdn.co/image/ab67616d0000b27393863f00132e7aeb77166c35-->
                 </div>
 
@@ -278,7 +254,7 @@
                 </div>
 
                 <audio id="player-audio">
-                    <source src="assets/ImNotThem.mp3" type="audio/mpeg">
+                    <source src="/assets/ImNotThem.mp3" type="audio/mpeg">
                 </audio>
             </article>
 
@@ -289,11 +265,11 @@
     <!--  TASKBAR -->
     <footer>
 
-        <img src="assets/home.png" id="home-btn">
+        <img src="/assets/home.png" id="home-btn">
 
-        <img src="assets/soundon.png" id="sound-btn">
+        <img src="/assets/soundon.png" id="sound-btn">
 
-        <img src="assets/settings.png" id="settings-btn" onclick="toggleWin('win-settings')">
+        <img src="/assets/settings.png" id="settings-btn" onclick="toggleWin('win-settings')">
 
         <div id="clock-wrap">
             <p id="clock-display">00:00</p>
@@ -303,7 +279,7 @@
        <div id="tz-selector">
           <span id="tz-label">São Paulo (UTC-3:00)</span>
           <div id="tz-arrow-wrap">
-              <img src="assets/arrow.png" id="tz-arrow">
+              <img src="/assets/arrow.png" id="tz-arrow">
          </div>
          <ul id="tz-dropdown">
                 <li data-tz="America/Sao_Paulo">São Paulo (UTC-3:00)</li>
@@ -319,21 +295,18 @@
     <section id="win-settings">
         <header>
             <h2>Settings</h2>
-            <image class="btn-close" src="assets/closebutton.png" onclick="closeWin('win-settings')"></image>
+            <image class="btn-close" src="/assets/closebutton.png" onclick="closeWin('win-settings')"></image>
         </header>
 
         <article>
-            <p>Em breve...</p>
+            <p>Soon.. :)</p>
         </article>
         <div class="win-bottom-bar"></div>
     </section>
 
     </main>
 
-    <script src="script.js"></script>
-
-
-
+    <script src="/script.js"></script>
 
 </body>
 

@@ -34,6 +34,25 @@ function toggleWin(id) {
         return;
     }
 
+    // PROJECTS CENTERED
+    if (id === 'win-projects') {
+        bringToFront(win);
+        win.style.top = '45%';
+        win.style.left = '50%';
+        win.style.transform = 'translate(-50%, -50%)';
+        return;
+    }
+
+    // SOCIALS CENTERED
+    if (id === 'win-socials') {
+        bringToFront(win);
+        win.style.top = '40%';
+        win.style.left = '50%';
+        win.style.transform = 'translate(-50%, -50%)';
+        return;
+    }
+    
+
     // files open on diagonal :)
 
     if (id.startsWith('win-file-')) {

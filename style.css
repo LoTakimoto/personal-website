@@ -87,9 +87,7 @@ aside button:hover img {
     animation: brilho-pulse 1.55s ease-in-out infinite;
 }
 
-
-
-/* JANELAS */
+/* WINDOWS */
 main > section {
     display: none;
     position: absolute;
@@ -124,7 +122,7 @@ main > section.open {
     border-top: 2.5px solid #1e3a5f;
 }
 
-/* cabeçalho p segurar */
+/* header drag */
 section > header {
     background: #6b8fa8;
     color: white;
@@ -147,7 +145,7 @@ section > header h2 {
     letter-spacing: 0.3px;
 }
 
-/* botao fechar */
+/* close button */
 .btn-close {
     width: 28px;
     height: 28px;
@@ -163,7 +161,7 @@ section > header h2 {
     transform: scale(1.13);
 }
 
-/* conteudo da janela */
+/* window content */
 section > article,
 section > nav {
     font-family: 'Baloo 2', sans-serif;
@@ -366,12 +364,6 @@ footer {
     transform: scale(1.1);
 }
 
-
-
-
-
-
-
 .btn-link {
     background: #1e3a5f;
     color: white;
@@ -386,6 +378,8 @@ footer {
 .btn-link:hover {
     background: #2a4f7f;
 }
+
+/* music player */
 
 #win-music {
     background: transparent;
@@ -413,7 +407,6 @@ footer {
     box-shadow: 0 8px 32px rgba(0,0,0,0.22);
     overflow: hidden;
 }
-
 
 #music-bottom-bar {
     background: #6b8fa8;
@@ -574,6 +567,8 @@ footer {
     border-radius: 0 0 9px 9px;
 }
 
+/* app icons */
+
 #icon-projects img {
     content: url('assets/projects2.png');
 }
@@ -593,6 +588,8 @@ footer {
 #icon-about:hover img {
     content: url('assets/abouthover.png');
 }
+
+/* Welcome screen */
 
 #welcome-screen {
     font-family: 'Baloo 2', sans-serif;
@@ -788,8 +785,6 @@ footer {
     color: white;
 }
 
-
-
 /* =====================
     socials window
     ===================== */
@@ -864,8 +859,6 @@ footer {
 #social-instagram { top: 33.3%; }
 #social-discord { top:66.6%;}
 
-
-
 /* ====================
  ABOUT ME - file explorer
 ================*/
@@ -900,7 +893,6 @@ footer {
     transition: background 0.15s ease;
 } 
 
-
 .about-files {
     display: none;
     flex-direction: column;
@@ -921,7 +913,7 @@ footer {
     opacity: 0.7;
 }
 
-/* ARQUIVOS!!! */
+/* FILES!!! */
 .display-file {
     display: flex;
     flex-direction: column;
@@ -951,7 +943,7 @@ footer {
     transform: translateY(-1px);
 }
 
-/* lado direito */
+/* right side */
 .about-display {
     flex: 1;
     padding: 20px;
@@ -1017,7 +1009,6 @@ body.loading-file * {
     color: #2c3e50;
     font-family: "Baloo 2", sans-serif;
 }
-
 
 /* ===========
 PROJECTS WINDOW
