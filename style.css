@@ -964,6 +964,14 @@ footer {
     align-content: flex-start;
 }
 
+.file-description {
+    margin-top: 12px;
+}
+
+.file-content {
+    overflow-y: auto ;
+}
+
 /* ==================
     file viewer
     =================*/

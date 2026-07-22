@@ -566,9 +566,39 @@ const aboutData = {
     'gallery': {
         type: 'folder',
         files: {
-            // pngs
+            'roblox': {
+                type: 'image',
+                title: 'roblox.jpg',
+                src: 'assets/roblox.jpg',
+                description: `There was a time I used to code in <span class="highlight">Roblox</span>, and I was trying to make a game that simulated a <span class="highlight">military base</span>. I never finished it thought..`
+            },
+            'godot': {
+                type: 'image',
+                title: 'godot.jpg',
+                src: 'assets/godot.jpg',
+                description: `During an event, I had to learn how to use <span class="highlight">Godot</span> and build a game from scratch!`
+            },
+            'robotics': {
+                type: 'image',
+                title: 'robot.jpg',
+                src: 'assets/robotics.jpg',
+                description: `<span class="highlight">Theseus</span>, my school's <span class="highlight">robotics team robot</span>! I joined the team last year and have been dedicating myself fully, focusing mainly on programming!`
+            },
+            'son': {
+                type: 'image',
+                title: 'son.jpg',
+                src: 'assets/son.jpg',
+                description: `Son. Snoopy.`
+            },
+            'desk': {
+                type: 'image',
+                title: 'desk.jpg',
+                src: 'assets/desk.jpg',
+                description: `This is where I spend the most of my time. Feeling good, feeling bad, I always find myself sitting at this desk. It's my little corner of peace :)`
+            }
         }
     }
+
 };
 
 
@@ -663,6 +693,13 @@ function openAboutFile(folderKey, fileKey) {
             const img = document.createElement('img');
             img.src = file.src;
             content.appendChild(img);
+
+            if (file.description) {
+                const desc = document.createElement('p');
+                desc.classList.add('file-description');
+                desc.innerHTML = file.description;
+                content.appendChild(desc);
+            }
         }
 
         document.querySelector('main').appendChild(win);
