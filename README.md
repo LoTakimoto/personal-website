@@ -20,7 +20,7 @@ This is the first thing I've built that I would call mine, not just something I 
 
 ## HOW TO RUN IT
 
-Live version: [loren.devlucas.page](https:://loren.devlucas.page/)
+Live version: [loren.devlucas.page](https://loren.devlucas.page/)
 
 Or run it locally:
  1. Clone or download this repository
